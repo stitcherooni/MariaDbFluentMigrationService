@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MariaDbFluentMigrationService": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
