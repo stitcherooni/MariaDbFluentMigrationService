@@ -27,3 +27,9 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+    - task: SSH@0
+      inputs:
+        sshEndpoint: 'ssh_to_hyve_dev_vps'
+        runOptions: 'commands'
+        commands: 'docker load -i $(Build.ArtifactStagingDirectory)/image.tar'
+        readyTimeout: '20000'
