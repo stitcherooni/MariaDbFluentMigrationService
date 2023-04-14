@@ -27,12 +27,12 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
-    - task: DockerCompose@0
+    - task: Docker@2
       inputs:
-        containerregistrytype: 'Azure Container Registry'
-        azureSubscription: 'Azure subscription 1(31ee4a72-709d-4b02-bd0e-30b59dee8a4c)'
-        azureContainerRegistry: '{"loginServer":"ptaeventscontainerregistry.azurecr.io", "id" : "/subscriptions/31ee4a72-709d-4b02-bd0e-30b59dee8a4c/resourceGroups/ContainerRegistry/providers/Microsoft.ContainerRegistry/registries/ptaeventscontainerregistry"}'
-        dockerComposeFile: '**/docker-compose.yml'
-        action: 'Run a Docker Compose command'
-        dockerComposeCommand: 'docker compose up'
+        command: buildAndPush
+        repository: $(imageRepository)
+        dockerfile: $(dockerfilePath)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          $(tag)
     
