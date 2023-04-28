@@ -10,6 +10,9 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  docker.username : 'ptaeventscontainerregistry'
+  docker.password : '1CN+RG64AYt+xxTUMk0+w7EDMqTz/SjtBXjMiY4NL0+ACRCIBXyg'
+  docker.registry: 'ptaeventscontainerregistry.azurecr.io'
 
 stages:
 - stage: Build
@@ -20,19 +23,23 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: Docker@2
-      displayName: Build an image
+    - task: CopyFilesOverSSH@0
       inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        tags: |
-          $(tag)
-    - task: Docker@2
+        sshEndpoint: 'ssh_to_hyve_dev_vps'
+        contents: |
+          Docker
+          docker-compose.yml
+        readyTimeout: '20000'
+    - task: SSH@0
       inputs:
-        command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+        sshEndpoint: 'ssh_to_hyve_dev_vps'
+        runOptions: 'commands'
+        commands: |
+          docker login -u $(docker.username) -p $(docker.password) $(docker.registry) 
+          cd deploy 
+          docker-compose pull 
+          docker-compose stop
+          docker-compose rm -f
+          docker-compose up -d
+        readyTimeout: '20000'
     
