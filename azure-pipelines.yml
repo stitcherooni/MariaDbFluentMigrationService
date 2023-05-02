@@ -35,7 +35,7 @@ stages:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
         runOptions: 'commands'
         commands: |
-          docker login -u $(docker.username) -p $(docker.password) $(docker.registry) 
+          docker login ptaeventscontainerregistry.azurecr.io -u $(docker.username) -p $(docker.password) $(docker.registry) 
           cd deploy 
           docker-compose pull 
           docker-compose stop
