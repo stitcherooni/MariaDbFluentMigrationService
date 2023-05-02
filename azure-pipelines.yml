@@ -11,7 +11,7 @@ resources:
 variables:
   tag: '$(Build.BuildId)'
   docker.username : 'ptaeventscontainerregistry'
-  docker.password : '1CN+RG64AYt+xxTUMk0+w7EDMqTz/SjtBXjMiY4NL0+ACRCIBXyg'
+  docker.password : 'H+hguwyvOT9c9cREt5UAmKWt7I+fCUXpi9cMkjUTMp+ACRDz8txv'
   docker.registry: 'ptaeventscontainerregistry.azurecr.io'
 
 stages:
