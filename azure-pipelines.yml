@@ -26,6 +26,7 @@ stages:
     - task: CopyFilesOverSSH@0
       inputs:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
+        targetFolder: 'deploy'
         contents: |
           Docker
           docker-compose.yml
@@ -35,7 +36,7 @@ stages:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
         runOptions: 'commands'
         commands: |
-          sudo docker login -u $(docker.username) -p $(docker.password) $(docker.registry) 
+          sudo sudo az acr login --name ptaeventscontainerregistry 
           cd deploy 
           docker-compose pull 
           docker-compose stop
