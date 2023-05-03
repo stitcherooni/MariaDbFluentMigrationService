@@ -36,7 +36,7 @@ stages:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
         runOptions: 'commands'
         commands: |
-          sudo az acr login --name ptaeventscontainerregistry 
+          sudo docker login -u $(docker.username) -p $(docker.password) $(docker.registry) 
           cd deploy 
           docker-compose pull 
           docker-compose stop
