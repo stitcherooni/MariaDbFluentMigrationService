@@ -28,6 +28,6 @@ stages:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
         runOptions: 'commands'
         commands:
-          sudo docker compose up -d
+          sudo docker compose up -d --quiet-pull --no-deps
         readyTimeout: '20000'
     
