@@ -37,6 +37,7 @@ stages:
         runOptions: 'commands'
         commands: |
           cd deploy
-          sudo docker compose up
+          sudo docker-compose down
+          sudo docker-compose up -d 2> docker-compose.log cat docker-compose.log
         readyTimeout: '20000'
     
