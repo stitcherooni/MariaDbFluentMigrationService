@@ -30,6 +30,7 @@ stages:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
         runOptions: 'commands'
         commands: |
+          cd deploy
           sudo docker compose up -d
         readyTimeout: '20000'
     
