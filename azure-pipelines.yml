@@ -35,5 +35,6 @@ stages:
         runOptions: 'commands'
         commands: |
           cd deploy
+          ls
         readyTimeout: '20000'
     
