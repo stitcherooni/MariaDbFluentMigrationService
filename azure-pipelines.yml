@@ -36,6 +36,5 @@ stages:
         commands: |
           cd deploy
           sudo docker login -u $(docker.username) -p $(docker.password) $(docker.registry)
-          sudo docker compose up
         readyTimeout: '20000'
     
