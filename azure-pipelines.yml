@@ -22,8 +22,8 @@ stages:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
         targetFolder: 'deploy'
         contents: |
-                  docker-compose.yaml
-                  Docker
+                  docker-compose.yml
+                  Dockerfile
         readyTimeout: '20000'
     - task: SSH@0
       inputs:
