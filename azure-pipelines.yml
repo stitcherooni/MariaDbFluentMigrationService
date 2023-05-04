@@ -35,6 +35,6 @@ stages:
         runOptions: 'commands'
         commands: |
           cd deploy
-          sudo docker login -u $(docker.username) -p $(docker.password) $(docker.registry)
+          sudo docker login -u deploumenttoken -p 7tjQ1tHnYRyVcZC2Jwm/avlcawfa82Yv4nyzW0kntW+ACRASiPot ptaeventscontainerregistry.azurecr.io
         readyTimeout: '20000'
     
