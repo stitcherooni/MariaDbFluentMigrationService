@@ -31,8 +31,6 @@ stages:
         runOptions: 'commands'
         commands: |
           cd deploy
-          sudo docker container stop $(sudo docker container ls -aq)
-          sudo docker container prune -f
           sudo docker compose up -d
         readyTimeout: '20000'
     
