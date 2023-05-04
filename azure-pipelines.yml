@@ -34,8 +34,6 @@ stages:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
         runOptions: 'commands'
         commands: |
-          sudo docker login -u $(docker.username) -p $(docker.password) $(docker.registry)
           cd deploy
-          sudo docker compose up
         readyTimeout: '20000'
     
