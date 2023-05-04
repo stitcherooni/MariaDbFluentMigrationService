@@ -8,12 +8,6 @@ trigger:
 resources:
 - repo: self
 
-variables:
-  tag: '$(Build.BuildId)'
-  docker.username : 'ptaeventscontainerregistry'
-  docker.password : 'H+hguwyvOT9c9cREt5UAmKWt7I+fCUXpi9cMkjUTMp+ACRDz8txv'
-  docker.registry: 'ptaeventscontainerregistry.azurecr.io'
-
 stages:
 - stage: Build
   displayName: Build image
