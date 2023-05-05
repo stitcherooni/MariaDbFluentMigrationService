@@ -29,5 +29,6 @@ stages:
         runOptions: 'commands'
         commands:
           sudo docker compose up -d --quiet-pull --no-deps
+          echo '##vso[task.logissue type=success]Task completed successfully'
         readyTimeout: '20000'
     
