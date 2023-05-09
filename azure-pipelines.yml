@@ -29,6 +29,7 @@ stages:
     - task: SSH@0
       inputs:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
+        failOnStdErr: false
         runOptions: 'commands'
         commands: |
           sudo docker compose up -d --quiet-pull --no-deps
