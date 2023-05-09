@@ -22,13 +22,13 @@ stages:
     steps:
     - task: CopyFilesOverSSH@0
       inputs:
-        sshEndpoint: 'DevEnv1SSH'
+        sshEndpoint: 'ssh_to_hyve_dev_vps'
         contents: |
                   **
         readyTimeout: '20000'
     - task: SSH@0
       inputs:
-        sshEndpoint: 'DevEnv1SSH'
+        sshEndpoint: 'ssh_to_hyve_dev_vps'
         runOptions: 'commands'
         commands: |
           sudo docker compose up -d --quiet-pull --no-deps
