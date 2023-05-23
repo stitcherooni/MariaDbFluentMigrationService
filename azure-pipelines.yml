@@ -23,6 +23,7 @@ stages:
     - task: CopyFilesOverSSH@0
       inputs:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
+        targetFolder: 'deploy'
         contents: |
                   **
         readyTimeout: '20000'
