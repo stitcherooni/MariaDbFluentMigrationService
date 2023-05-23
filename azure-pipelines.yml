@@ -33,6 +33,7 @@ stages:
         failOnStdErr: false
         runOptions: 'commands'
         commands: |
+          cd deploy
           sudo docker compose up -d --quiet-pull --no-deps
         readyTimeout: '20000'
     
