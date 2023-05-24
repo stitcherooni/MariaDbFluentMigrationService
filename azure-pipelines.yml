@@ -23,7 +23,7 @@ stages:
     - task: CopyFilesOverSSH@0
       inputs:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
-        targetFolder: 'deploy'
+        targetFolder: 'dbandmigrator'
         contents: |
                   **
         readyTimeout: '20000'
@@ -33,6 +33,6 @@ stages:
         failOnStdErr: false
         runOptions: 'commands'
         commands: |
-          sudo docker compose -f ~/deploy/docker-compose.yml up -d
+           sudo docker compose -f ~/dbandmigrator/docker-compose.yml up
         readyTimeout: '20000'
     
