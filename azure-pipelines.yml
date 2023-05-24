@@ -12,11 +12,11 @@ variables:
   system.debug: true
   
 stages:
-- stage: Build
-  displayName: Build image
+- stage: Deploy
+  displayName: Deploy db and run migrator
   jobs:
-  - job: Build
-    displayName: Build
+  - job: 
+    displayName: Deploy db and run migrator
     pool:
       vmImage: ubuntu-latest
     steps:
