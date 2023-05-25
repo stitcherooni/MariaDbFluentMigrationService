@@ -21,7 +21,7 @@ services:
         MARIADB_ROOT_PASSWORD : j@w@3cr1pt
         MARIADB_DATABASE : ptaevent
     ports: 
-         - 3306:3306
+         - 3307:3306
     command: ['mysqld', '--character-set-server=latin1', '--collation-server=latin1_swedish_ci']
     healthcheck:
             test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
