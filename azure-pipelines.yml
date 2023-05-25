@@ -8,27 +8,31 @@ trigger:
 resources:
 - repo: self
 
+variables:
+  system.debug: true
+  
 stages:
-- stage: Build
-  displayName: Build image
+- stage: Deploy
+  displayName: Deploy db and run migrator
   jobs:
-  - job: Build
-    displayName: Build
+  - job: 
+    displayName: Deploy db and run migrator
     pool:
       vmImage: ubuntu-latest
     steps:
     - task: CopyFilesOverSSH@0
       inputs:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
+        targetFolder: 'dbandmigrator'
         contents: |
                   **
         readyTimeout: '20000'
     - task: SSH@0
       inputs:
         sshEndpoint: 'ssh_to_hyve_dev_vps'
+        failOnStdErr: false
         runOptions: 'commands'
         commands: |
-          sudo docker compose up -d --quiet-pull --no-deps
-          echo '##vso[task.logissue type=success]Task completed successfully'
+           sudo docker compose -f ~/dbandmigrator/docker-compose.yml up -d
         readyTimeout: '20000'
     

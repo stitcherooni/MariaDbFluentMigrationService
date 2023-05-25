@@ -39,6 +39,8 @@ namespace MariaDbFluentMigrationService
                     Console.WriteLine("ERROR {0}", ex.Message);
                 }
             }
+
+            Console.WriteLine("TA DAAAAAAAAAAAAAA");
         }
         private static ServiceProvider CreateServices(string connectionString)
         {
