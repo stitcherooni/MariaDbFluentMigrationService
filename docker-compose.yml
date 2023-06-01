@@ -16,7 +16,7 @@ services:
   mariadb:
     image: mariadb:10.5
     networks:
-      - mynetwork
+      - db_network
     volumes:
     - type: volume
       source: mariadb-data
