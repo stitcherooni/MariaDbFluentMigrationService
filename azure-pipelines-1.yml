@@ -8,7 +8,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '5826a18b-ffba-49d5-84a1-8124f8883f52'
-  imageRepository: 'mariadbfluentmigrationservice'
+  imageRepository: 'mariadbmigration'
   containerRegistry: 'ptaeventscontainerregistry.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
