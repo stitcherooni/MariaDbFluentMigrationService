@@ -1,0 +1,38 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+resources:
+- repo: self
+
+trigger:
+  none
+
+variables:
+  system.debug: true
+  
+stages:
+- stage: Deploy
+  displayName: Deploy db and run migrator
+  jobs:
+  - job: 
+    displayName: Deploy db and run migrator
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: CopyFilesOverSSH@0
+      inputs:
+        sshEndpoint: 'ssh_to_qa_db'
+        targetFolder: 'dbandmigrator'
+        contents: |
+                  **
+        readyTimeout: '20000'
+    - task: SSH@0
+      inputs:
+        sshEndpoint: 'ssh_to_qa_db'
+        failOnStdErr: false
+        runOptions: 'commands'
+        commands: |
+           sudo docker compose -f ~/dbandmigrator/docker-compose.yml up -d
+        readyTimeout: '20000'
+    
