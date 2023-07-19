@@ -20,10 +20,18 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: Bash@3
+    - task: CopyFilesOverSSH@0
       inputs:
-        targetType: 'inline'
-        script: |
-          # Write your commands here
-          
-          telnet 20.39.210.5 22
+        sshEndpoint: 'ssh_to_qa_db'
+        targetFolder: 'dbandmigrator'
+        contents: |
+                  **
+        readyTimeout: '20000'
+    - task: SSH@0
+      inputs:
+        sshEndpoint: 'ssh_to_qa_db'
+        failOnStdErr: false
+        runOptions: 'commands'
+        commands: |
+           sudo docker compose -f ~/dbandmigrator/docker-compose.yml up -d
+        readyTimeout: '20000'
