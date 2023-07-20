@@ -33,6 +33,6 @@ stages:
         failOnStdErr: false
         runOptions: 'commands'
         commands: |
-           sudo docker compose -f ~/dbandmigrator/docker-compose.yml up -d --build
+           sudo docker down && sudo docker compose -f ~/dbandmigrator/docker-compose.yml up -d
         readyTimeout: '20000'
     
