@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   mariadbfluentmigrationservice:
-    image: mariadbfluentmigrationservice
+    image: mariadbfluentmigrationservice:1.1
     networks:
       - db_network
     build:
