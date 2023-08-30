@@ -34,6 +34,8 @@ jobs:
       arguments: 'job $(jobName)'
   - task: Kubernetes@1
     displayName: Create Job $(jobName)
+    env:
+      imageVersion: "latest"
     inputs:
       connectionType: 'Azure Resource Manager'
       azureSubscriptionEndpoint: 'internal-adm-sp'
