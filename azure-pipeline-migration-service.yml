@@ -32,6 +32,22 @@ jobs:
       namespace: 'dev'
       command: 'delete'
       arguments: 'job $(jobName)'
+
+  - task: replacetokens@5
+    inputs:
+      rootDirectory: '$(Build.SourcesDirectory)'
+      targetFiles: '**/migration-service.yaml'
+      encoding: 'auto'
+      tokenPattern: 'azpipelines'
+      writeBOM: true
+      actionOnMissing: 'warn'
+      keepToken: false
+      actionOnNoFiles: 'warn'
+      enableTransforms: false
+      enableRecursion: false
+      useLegacyPattern: false
+      enableTelemetry: true
+
   - task: Kubernetes@1
     displayName: Create Job $(jobName)
     env:
@@ -46,3 +62,4 @@ jobs:
       arguments: '-f $(Build.SourcesDirectory)/migration-service.yaml'
       secretType: 'dockerRegistry'
       containerRegistryType: 'Azure Container Registry'
+
