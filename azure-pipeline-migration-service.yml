@@ -1,0 +1,21 @@
+trigger:
+  none
+
+pool:
+  name: internal-agent
+
+resources:
+- repo: self
+
+jobs:
+- job: ApplyKubernetesJob
+  displayName: 'Apply Kubernetes Job'
+  pool:
+    name: internal-agent
+  steps:
+  - task: UseKubectl@1
+    inputs:
+      connectionType: 'Kubernetes Service Connection'
+      kubernetesServiceEndpoint: '<YOUR_K8S_SERVICE_CONNECTION>'
+      command: 'apply'
+      arguments: '-f $(Build.SourcesDirectory)/migration-service.yaml'

@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: migration-service
+  namespace: dev #$(envName)
+spec:
+  template:
+    spec:
+      containers:
+        - name: migration-service
+          image: azcentralcr.azurecr.io/fluent-migration-service:$(imageVersion)  # version number 'experiment'
+      restartPolicy: Never
+  backoffLimit: 4
