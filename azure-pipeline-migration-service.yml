@@ -12,6 +12,10 @@ jobs:
   displayName: 'Apply Kubernetes Job'
   pool:
     name: internal-agent
+  variables:
+  - name: imageVersion
+    value: latest
+    
   steps:
   - task: KubeloginInstaller@0
     inputs:
