@@ -15,12 +15,25 @@ jobs:
   variables:
   - name: imageVersion
     value: latest
+  - name: jobName
+    value: migration-service
     
   steps:
   - task: KubeloginInstaller@0
     inputs:
       kubeloginVersion: 'latest'
   - task: Kubernetes@1
+    displayName: Delete Job $(jobName)
+    inputs:
+      connectionType: 'Azure Resource Manager'
+      azureSubscriptionEndpoint: 'internal-adm-sp'
+      azureResourceGroup: 'internal-ptae-rg-01'
+      kubernetesCluster: 'internal-ptae-aks-01'
+      namespace: 'dev'
+      command: 'delete'
+      arguments: 'job $(jobName)'
+  - task: Kubernetes@1
+    displayName: Create Job $(jobName)
     inputs:
       connectionType: 'Azure Resource Manager'
       azureSubscriptionEndpoint: 'internal-adm-sp'
