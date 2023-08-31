@@ -1,5 +1,5 @@
 trigger:
-  - k8s-deployment
+  none
 
 pool:
   name: internal-agent
