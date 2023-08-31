@@ -25,6 +25,7 @@ stages:
       inputs:
         targetType: inline
         script: |
+          mount --make-rshared /
           podman build -f $(Build.SourcesDirectory)/Dockerfile -t $(jobName):$(tag) .
           podman login -u $(internalSP) -p $(internalPWD) $(acrName)
           podman push $(acrName)/$(jobName):$(tag)
