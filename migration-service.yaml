@@ -8,6 +8,6 @@ spec:
     spec:
       containers:
         - name: migration-service
-          image: azcentralcr.azurecr.io/fluent-migration-service:$(imageVersion)  # version number 'experiment'
+          image: azcentralcr.azurecr.io/fluent-migration-service:$(tag)  # version number 'experiment'
       restartPolicy: Never
   backoffLimit: 4
