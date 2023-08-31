@@ -7,7 +7,6 @@ pool:
 variables:
   tag: '$(Build.BuildId)'
   jobName: migration-service
-  acrName: azcentralcr
 
 resources:
 - repo: self
@@ -18,6 +17,8 @@ stages:
   jobs:
   - job: Build
     displayName: Build
+    variables:
+    - group: dev
     steps:
     - task: Bash@3
       displayName: Build Docker Image for DemoWeb
@@ -25,7 +26,7 @@ stages:
         targetType: inline
         script: |
           podman build -f $(Build.SourcesDirectory)/Dockerfile -t $(jobName):$(tag) .
-          podman login -u $(acrServicePrincipal) -p $(acrPassword) $(acrName)
+          podman login -u $(internalSP) -p $(internalPWD) $(acrName)
           podman push $(acrName)/$(jobName):$(tag)
 
     # - task: Docker@2
