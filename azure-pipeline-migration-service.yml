@@ -21,7 +21,7 @@ stages:
     - group: dev
     steps:
     - task: Bash@3
-      displayName: Build Docker Image for DemoWeb
+      displayName: Build and Push Image to Azure Container Registry
       inputs:
         targetType: inline
         script: |
