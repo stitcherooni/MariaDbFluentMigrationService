@@ -1,5 +1,5 @@
 trigger:
-  none
+  - k8s-deployment
 
 pool:
   name: internal-agent
@@ -21,69 +21,63 @@ stages:
     - task: DockerInstaller@0
       inputs:
         dockerVersion: '17.09.0-ce'
-    - task: Bash@3
-      displayName: Build Docker Image for DemoWeb
+    - task: Docker@2
+      displayName: Build and push image to container registry
       inputs:
-        targetType: inline
-        script: |
-          docker
-    # - task: Docker@2
-    #   displayName: Build and push image to container registry
-    #   inputs:
-    #     command: buildAndPush
-    #     repository: $(jobName)
-    #     dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-    #     containerRegistry: 'azcentralcr.azurecr.io'
-    #     tags: |
-    #       $(tag)
+        command: buildAndPush
+        repository: $(jobName)
+        dockerfile: $(Build.SourcesDirectory)/Dockerfile
+        containerRegistry: 'azcentralcr'
+        tags: |
+          $(tag)
 
-- stage: Deploy
-  displayName: Deploy image to AKS
-  jobs:
-  - job: ApplyKubernetesJob
-    displayName: 'Apply Kubernetes Job'
-    steps:
-    - task: KubeloginInstaller@0
-      inputs:
-        kubeloginVersion: 'latest'
-    - task: Kubernetes@1
-      displayName: Delete Job $(jobName)
-      inputs:
-        connectionType: 'Azure Resource Manager'
-        azureSubscriptionEndpoint: 'internal-adm-sp'
-        azureResourceGroup: 'internal-ptae-rg-01'
-        kubernetesCluster: 'internal-ptae-aks-01'
-        namespace: 'dev'
-        command: 'delete'
-        arguments: 'job $(jobName)'
+# - stage: Deploy
+#   displayName: Deploy image to AKS
+#   jobs:
+#   - job: ApplyKubernetesJob
+#     displayName: 'Apply Kubernetes Job'
+#     steps:
+#     - task: KubeloginInstaller@0
+#       inputs:
+#         kubeloginVersion: 'latest'
+#     - task: Kubernetes@1
+#       displayName: Delete Job $(jobName)
+#       inputs:
+#         connectionType: 'Azure Resource Manager'
+#         azureSubscriptionEndpoint: 'internal-adm-sp'
+#         azureResourceGroup: 'internal-ptae-rg-01'
+#         kubernetesCluster: 'internal-ptae-aks-01'
+#         namespace: 'dev'
+#         command: 'delete'
+#         arguments: 'job $(jobName)'
 
-    - task: replacetokens@5
-      inputs:
-        rootDirectory: '$(Build.SourcesDirectory)'
-        targetFiles: '**/migration-service.yaml'
-        encoding: 'auto'
-        tokenPattern: 'azpipelines'
-        writeBOM: true
-        actionOnMissing: 'warn'
-        keepToken: false
-        actionOnNoFiles: 'warn'
-        enableTransforms: false
-        enableRecursion: false
-        useLegacyPattern: false
-        enableTelemetry: true
+#     - task: replacetokens@5
+#       inputs:
+#         rootDirectory: '$(Build.SourcesDirectory)'
+#         targetFiles: '**/migration-service.yaml'
+#         encoding: 'auto'
+#         tokenPattern: 'azpipelines'
+#         writeBOM: true
+#         actionOnMissing: 'warn'
+#         keepToken: false
+#         actionOnNoFiles: 'warn'
+#         enableTransforms: false
+#         enableRecursion: false
+#         useLegacyPattern: false
+#         enableTelemetry: true
 
-    - task: Kubernetes@1
-      displayName: Create Job $(jobName)
-      env:
-        imageVersion: "latest"
-      inputs:
-        connectionType: 'Azure Resource Manager'
-        azureSubscriptionEndpoint: 'internal-adm-sp'
-        azureResourceGroup: 'internal-ptae-rg-01'
-        kubernetesCluster: 'internal-ptae-aks-01'
-        namespace: 'dev'
-        command: 'apply'
-        arguments: '-f $(Build.SourcesDirectory)/migration-service.yaml'
-        secretType: 'dockerRegistry'
-        containerRegistryType: 'Azure Container Registry'
+#     - task: Kubernetes@1
+#       displayName: Create Job $(jobName)
+#       env:
+#         imageVersion: "latest"
+#       inputs:
+#         connectionType: 'Azure Resource Manager'
+#         azureSubscriptionEndpoint: 'internal-adm-sp'
+#         azureResourceGroup: 'internal-ptae-rg-01'
+#         kubernetesCluster: 'internal-ptae-aks-01'
+#         namespace: 'dev'
+#         command: 'apply'
+#         arguments: '-f $(Build.SourcesDirectory)/migration-service.yaml'
+#         secretType: 'dockerRegistry'
+#         containerRegistryType: 'Azure Container Registry'
 
