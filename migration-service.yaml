@@ -8,5 +8,16 @@ spec:
       containers:
         - name: migration-service
           image: azcentralcr.azurecr.io/fluent-migration-service:$(tag)
+          env:
+          - name: DB_HOST_NAME
+            value: $(hostName)
+          - name: DB_HOST_PORT
+            value: "3306"
+          - name: DB_USER_NAME
+            value: $(dbUserName)
+          - name: DB_PASSWORD
+            value: $(dbUserPassword)
+          - name: DB_NAME
+            value: $(dbName) 
       restartPolicy: Never
   backoffLimit: 4
