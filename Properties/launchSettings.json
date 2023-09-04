@@ -5,6 +5,13 @@
     },
     "Docker": {
       "commandName": "Docker"
+    },
+    "Development": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ConnectionStrings__MariaDbServer": "data source=localhost;port=3307;Database=ptaevent;uid=root;pwd=j@w@3cr1pt;Allow User Variables=true"
+      }
     }
   }
 }
