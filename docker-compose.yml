@@ -2,9 +2,7 @@ version: '3.4'
 
 services:
   mariadbfluentmigrationservice:
-    image: mariadbfluentmigrationservice:1.1
-    networks:
-      - db_network
+    image: mariadbfluentmigrationservice
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,8 +13,6 @@ services:
 
   mariadb:
     image: mariadb:10.5
-    networks:
-      - db_network
     volumes:
     - type: volume
       source: mariadb-data
@@ -33,8 +29,4 @@ services:
             retries: 10
 volumes:
     mariadb-data:
-
-networks:
-  db_network:
-    driver: bridge
     
