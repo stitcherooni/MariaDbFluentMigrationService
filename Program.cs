@@ -19,7 +19,17 @@ namespace MariaDbFluentMigrationService
 
             IConfiguration config = builder.Build();
             
-            string connectionString = Environment.GetEnvironmentVariable("ConnectionStrings__MariaDbServer");
+            //string connectionString = Environment.GetEnvironmentVariable("ConnectionStrings__MariaDbServer");
+
+            string DB_HOST_NAME = Environment.GetEnvironmentVariable("DB_HOST_NAME");
+            string DB_HOST_PORT = Environment.GetEnvironmentVariable("DB_HOST_PORT");
+            string DB_USER_NAME = Environment.GetEnvironmentVariable("DB_USER_NAME");
+            string DB_PASSWORD = Environment.GetEnvironmentVariable("DB_PASSWORD");
+            string DB_NAME = Environment.GetEnvironmentVariable("DB_NAME");
+
+            var connectionString = String.Format("data source={0};port={1};Database={2};uid={3};pwd={4};Allow User Variables=true",
+                DB_HOST_NAME, DB_HOST_PORT, DB_NAME, DB_USER_NAME, DB_PASSWORD);
+
 
             if (connectionString == null)
             {
