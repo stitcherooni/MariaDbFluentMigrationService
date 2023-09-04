@@ -19,8 +19,7 @@ namespace MariaDbFluentMigrationService
 
             IConfiguration config = builder.Build();
             
-            string connectionString = config.GetConnectionString("MariaDbServer");
-            
+            string connectionString = Environment.GetEnvironmentVariable("ConnectionStrings__MariaDbServer");
 
             if (connectionString == null)
             {
