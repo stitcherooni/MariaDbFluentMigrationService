@@ -10,7 +10,7 @@ spec:
           image: azcentralcr.azurecr.io/fluent-migration-service:$(tag)
           env:
           - name: DB_HOST_NAME
-            value: $(hostName)
+            value: $(dbHostName)
           - name: DB_HOST_PORT
             value: "3306"
           - name: DB_USER_NAME
