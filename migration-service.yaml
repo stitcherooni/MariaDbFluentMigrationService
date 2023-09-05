@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
         - name: migration-service
-          image: azcentralcr.azurecr.io/fluent-migration-service:$(tag)
+          image: azcentralcr.azurecr.io/migration-service:$(tag)
           env:
           - name: DB_HOST_NAME
             value: $(dbHostName)
