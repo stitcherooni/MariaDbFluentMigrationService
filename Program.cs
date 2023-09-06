@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
+using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace MariaDbFluentMigrationService
 {
@@ -17,8 +18,19 @@ namespace MariaDbFluentMigrationService
                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
             IConfiguration config = builder.Build();
+            
+            //string connectionString = Environment.GetEnvironmentVariable("ConnectionStrings__MariaDbServer");
 
-            string connectionString = config.GetSection("ConnectionStrings").GetSection("MariaDbServer").Value;
+            string DB_HOST_NAME = Environment.GetEnvironmentVariable("DB_HOST_NAME");
+            string DB_HOST_PORT = Environment.GetEnvironmentVariable("DB_HOST_PORT");
+            string DB_USER_NAME = Environment.GetEnvironmentVariable("DB_USER_NAME");
+            string DB_PASSWORD = Environment.GetEnvironmentVariable("DB_PASSWORD");
+            string DB_NAME = Environment.GetEnvironmentVariable("DB_NAME");
+
+            var connectionString = String.Format("data source={0};port={1};Database={2};uid={3};pwd={4};Allow User Variables=true",
+                DB_HOST_NAME, DB_HOST_PORT, DB_NAME, DB_USER_NAME, DB_PASSWORD);
+
+
             if (connectionString == null)
             {
                 Console.WriteLine("ERROR NO connection string found in config file");

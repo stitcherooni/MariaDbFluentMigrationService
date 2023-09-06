@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: migration-service
+spec:
+  template:
+    spec:
+      containers:
+        - name: migration-service
+          image: azcentralcr.azurecr.io/migration-service:$(tag)
+          env:
+            - name: DB_HOST_NAME
+              value: $(dbHostName)
+            - name: DB_HOST_PORT
+              value: "3306"
+            - name: DB_USER_NAME
+              value: $(dbUserName)
+            - name: DB_PASSWORD
+              value: $(dbUserPassword)
+            - name: DB_NAME
+              value: $(dbName)
+      restartPolicy: Never
+  backoffLimit: 4
