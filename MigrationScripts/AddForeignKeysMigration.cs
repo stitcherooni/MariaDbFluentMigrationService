@@ -223,9 +223,9 @@ namespace MigrationScripts
                   .FromTable("tblCountry").ForeignColumn("CountryUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblCurrency_tblCustomer_CreatedBy")
-                  .FromTable("tblCurrency").ForeignColumn("CurrencyCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblCurrency_tblCustomer_CreatedBy")
+            //      .FromTable("tblCurrency").ForeignColumn("CurrencyCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblCurrency_tblCustomer_UpdatedBy")
                   .FromTable("tblCurrency").ForeignColumn("CurrencyUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1046,8 +1046,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblCountry_tblCustomer_UpdatedBy")
                   .OnTable("tblCountry");
 
-            Delete.ForeignKey("FK_tblCurrency_tblCustomer_CreatedBy")
-                  .OnTable("tblCurrency");
+            //Delete.ForeignKey("FK_tblCurrency_tblCustomer_CreatedBy")
+            //      .OnTable("tblCurrency");
             Delete.ForeignKey("FK_tblCurrency_tblCustomer_UpdatedBy")
                   .OnTable("tblCurrency");
 
