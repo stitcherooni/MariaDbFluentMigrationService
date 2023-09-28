@@ -746,22 +746,22 @@ namespace MigrationScripts
             //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
             Create.ForeignKey("FK_tblPtamember_tblCustomer_CreatedBy")
-                  .FromTable("tblPtamember").ForeignColumn("PtamemberCreatedBy")
+                  .FromTable("tblPTAMember").ForeignColumn("PtamemberCreatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblPtamember_tblCustomer_UpdatedBy")
-                  .FromTable("tblPtamember").ForeignColumn("PtamemberUpdatedBy")
+                  .FromTable("tblPTAMember").ForeignColumn("PtamemberUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblPtamember_tblSchool_School")
-                  .FromTable("tblPtamember").ForeignColumn("SchoolId")
+                  .FromTable("tblPTAMember").ForeignColumn("SchoolId")
                   .ToTable("tblSchool").PrimaryColumn("SchoolId");
             Create.ForeignKey("FK_tblPtamember_tblRole_Role")
-                  .FromTable("tblPtamember").ForeignColumn("RoleId")
+                  .FromTable("tblPTAMember").ForeignColumn("RoleId")
                   .ToTable("tblRole").PrimaryColumn("RoleId");
             Create.ForeignKey("FK_tblPtamember_tblAcademicYear_AcademicYear")
-                  .FromTable("tblPtamember").ForeignColumn("AcademicYearId")
+                  .FromTable("tblPTAMember").ForeignColumn("AcademicYearId")
                   .ToTable("tblAcademicYear").PrimaryColumn("AcademicYearId");
             Create.ForeignKey("FK_tblPtamember_tblCustomer_Customer")
-                  .FromTable("tblPtamember").ForeignColumn("CustomerId")
+                  .FromTable("tblPTAMember").ForeignColumn("CustomerId")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
              Create.ForeignKey("FK_tblRefund_tblOrder_Order")
@@ -1413,17 +1413,17 @@ namespace MigrationScripts
             //      .OnTable("tblProductType");
 
             Delete.ForeignKey("FK_tblPtamember_tblCustomer_CreatedBy")
-                  .OnTable("tblPtamember");
+                  .OnTable("tblPTAMember");
             Delete.ForeignKey("FK_tblPtamember_tblCustomer_UpdatedBy")
-                  .OnTable("tblPtamember");
+                  .OnTable("tblPTAMember");
             Delete.ForeignKey("FK_tblPtamember_tblSchool_School")
-                  .OnTable("tblPtamember");
+                  .OnTable("tblPTAMember");
             Delete.ForeignKey("FK_tblPtamember_tblRole_Role")
-                  .OnTable("tblPtamember");
+                  .OnTable("tblPTAMember");
             Delete.ForeignKey("FK_tblPtamember_tblAcademicYear_AcademicYear")
-                  .OnTable("tblPtamember");
+                  .OnTable("tblPTAMember");
             Delete.ForeignKey("FK_tblPtamember_tblCustomer_Customer")
-                  .OnTable("tblPtamember");
+                  .OnTable("tblPTAMember");
 
             Delete.ForeignKey("FK_tblRefund_tblOrder_Order")
                   .OnTable("tblRefund");
