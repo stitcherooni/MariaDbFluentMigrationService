@@ -652,7 +652,7 @@ namespace MigrationScripts
                   .FromTable("tblProduct").ForeignColumn("SchoolId")
                   .ToTable("tblSchool").PrimaryColumn("SchoolId");
             Create.ForeignKey("FK_tblProduct_tblAuction_Auction")
-                 .FromTable("tblProduct").ForeignColumn("PollId")
+                 .FromTable("tblProduct").ForeignColumn("AuctionId")
                  .ToTable("tblAuction").PrimaryColumn("AuctionId");
             Create.ForeignKey("FK_tblProduct_tblProductType_ProductType")
                   .FromTable("tblProduct").ForeignColumn("ProductTypeId")
