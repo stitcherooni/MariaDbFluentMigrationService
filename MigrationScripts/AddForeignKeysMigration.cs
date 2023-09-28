@@ -800,7 +800,7 @@ namespace MigrationScripts
                   .FromTable("tblSchool").ForeignColumn("SchoolPtacurrencyId")
                   .ToTable("tblCurrency").PrimaryColumn("CurrencyId");
             Create.ForeignKey("FK_tblSchool_tblCustomer_PtalotteryLicenceUploadedBy")
-                  .FromTable("tblSchool").ForeignColumn("SchoolPtalotteryLicenceUploadedById")
+                  .FromTable("tblSchool").ForeignColumn("SchoolPtalotteryLicenceUploadedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblSchool_tblCustomer_TermsSignedBy")
                   .FromTable("tblSchool").ForeignColumn("SchoolTermsSignedBy")
