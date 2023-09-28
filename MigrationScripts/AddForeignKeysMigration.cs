@@ -230,15 +230,9 @@ namespace MigrationScripts
                   .FromTable("tblCurrency").ForeignColumn("CurrencyUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblCustomer_tblPartner_Partner")
-                  .FromTable("tblCustomer").ForeignColumn("CustomerPartnerId")
-                  .ToTable("tblPartner").PrimaryColumn("PartnerId");
             Create.ForeignKey("FK_tblCustomer_tblSchool_Application")
                   .FromTable("tblCustomer").ForeignColumn("ApplicationId")
                   .ToTable("tblSchool").PrimaryColumn("SchoolId");
-            Create.ForeignKey("FK_tblCustomer_tblContentHash_Hash")
-                  .FromTable("tblCustomer").ForeignColumn("CustomerHashId")
-                  .ToTable("tblContentHash").PrimaryColumn("ContentHashId");
             Create.ForeignKey("FK_tblCustomer_tblSchool_CustomerSchool")
                   .FromTable("tblCustomer").ForeignColumn("CustomerSchoolId")
                   .ToTable("tblSchool").PrimaryColumn("SchoolId");
@@ -1057,11 +1051,7 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblCurrency_tblCustomer_UpdatedBy")
                   .OnTable("tblCurrency");
 
-            Delete.ForeignKey("FK_tblCustomer_tblPartner_Partner")
-                  .OnTable("tblCustomer");
             Delete.ForeignKey("FK_tblCustomer_tblSchool_Application")
-                  .OnTable("tblCustomer");
-            Delete.ForeignKey("FK_tblCustomer_tblContentHash_Hash")
                   .OnTable("tblCustomer");
             Delete.ForeignKey("FK_tblCustomer_tblSchool_CustomerSchool")
                   .OnTable("tblCustomer");
