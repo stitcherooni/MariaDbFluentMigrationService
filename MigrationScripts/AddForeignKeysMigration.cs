@@ -560,9 +560,9 @@ namespace MigrationScripts
                   .FromTable("tblOrderItem").ForeignColumn("OrderItemUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblOrganisationType_tblCustomer_CreatedBy")
-                  .FromTable("tblOrganisationType").ForeignColumn("OrganisationTypeCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblOrganisationType_tblCustomer_CreatedBy")
+            //      .FromTable("tblOrganisationType").ForeignColumn("OrganisationTypeCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblOrganisationType_tblCustomer_UpdatedBy")
                   .FromTable("tblOrganisationType").ForeignColumn("OrganisationTypeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1282,8 +1282,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblOrderItem_tblCustomer_UpdatedBy")
                   .OnTable("tblOrderItem");
 
-            Delete.ForeignKey("FK_tblOrganisationType_tblCustomer_CreatedBy")
-                  .OnTable("tblOrganisationType");
+            //Delete.ForeignKey("FK_tblOrganisationType_tblCustomer_CreatedBy")
+            //      .OnTable("tblOrganisationType");
             Delete.ForeignKey("FK_tblOrganisationType_tblCustomer_UpdatedBy")
                   .OnTable("tblOrganisationType");
 
