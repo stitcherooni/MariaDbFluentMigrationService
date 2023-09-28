@@ -145,9 +145,9 @@ namespace MigrationScripts
             //Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_CreatedBy")
             //      .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryCreatedBy")
             //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
-            Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
-                  .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryUpdatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
+            //      .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryUpdatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
             Create.ForeignKey("FK_tblBusinessDirectoryClick_tblBusinessDirectory_BusinessDirectory")
                   .FromTable("tblBusinessDirectoryClick").ForeignColumn("BusinessDirectoryId")
@@ -991,8 +991,8 @@ namespace MigrationScripts
             //      .OnTable("tblBusinessDirectoryCategory");
             //Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_CreatedBy")
             //      .OnTable("tblBusinessDirectoryCategory");
-            Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
-                  .OnTable("tblBusinessDirectoryCategory");
+            //Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
+            //      .OnTable("tblBusinessDirectoryCategory");
 
             Delete.ForeignKey("FK_tblBusinessDirectoryClick_tblBusinessDirectory_BusinessDirectory")
                   .OnTable("tblBusinessDirectoryClick");
