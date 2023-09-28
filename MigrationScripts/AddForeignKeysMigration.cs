@@ -741,9 +741,9 @@ namespace MigrationScripts
             //Create.ForeignKey("FK_tblProductType_tblCustomer_CreatedBy")
             //      .FromTable("tblProductType").ForeignColumn("ProductTypeCreatedBy")
             //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
-            Create.ForeignKey("FK_tblProductType_tblCustomer_UpdatedBy")
-                  .FromTable("tblProductType").ForeignColumn("ProductTypeUpdatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblProductType_tblCustomer_UpdatedBy")
+            //      .FromTable("tblProductType").ForeignColumn("ProductTypeUpdatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
             Create.ForeignKey("FK_tblPtamember_tblCustomer_CreatedBy")
                   .FromTable("tblPtamember").ForeignColumn("PtamemberCreatedBy")
@@ -1409,8 +1409,8 @@ namespace MigrationScripts
 
             //Delete.ForeignKey("FK_tblProductType_tblCustomer_CreatedBy")
             //      .OnTable("tblProductType");
-            Delete.ForeignKey("FK_tblProductType_tblCustomer_UpdatedBy")
-                  .OnTable("tblProductType");
+            //Delete.ForeignKey("FK_tblProductType_tblCustomer_UpdatedBy")
+            //      .OnTable("tblProductType");
 
             Delete.ForeignKey("FK_tblPtamember_tblCustomer_CreatedBy")
                   .OnTable("tblPtamember");
