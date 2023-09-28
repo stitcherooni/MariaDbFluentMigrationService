@@ -12,7 +12,7 @@ namespace MigrationScripts
                   .ToTable("tblCountry").PrimaryColumn("CountryId");
             Create.ForeignKey("FK_tblAcademicYear_tblCustomer_CreatedBy")
                   .FromTable("tblAcademicYear").ForeignColumn("AcademicYearCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerID");
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblAcademicYear_tblCustomer_UpdatedBy")
                   .FromTable("tblAcademicYear").ForeignColumn("AcademicYearUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerID");
