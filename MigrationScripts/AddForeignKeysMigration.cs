@@ -500,9 +500,9 @@ namespace MigrationScripts
             //Create.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
             //      .FromTable("tblMessageGroup").ForeignColumn("EventId")
             //      .ToTable("tbEvent").PrimaryColumn("EventId");
-            Create.ForeignKey("FK_tblMessageGroup_tblCustomer_Customer")
-                  .FromTable("tblMessageGroup").ForeignColumn("CustomerId")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblMessageGroup_tblClass_Class")
+                  .FromTable("tblMessageGroup").ForeignColumn("ClassId")
+                  .ToTable("tblClass").PrimaryColumn("ClassId");
             Create.ForeignKey("FK_tblMessageGroup_tblCustomer_CreatedBy")
                   .FromTable("tblMessageGroup").ForeignColumn("MessageGroupCreatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1238,7 +1238,7 @@ namespace MigrationScripts
 
             //Delete.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
             //      .OnTable("tblMessageGroup");
-            Delete.ForeignKey("FK_tblMessageGroup_tblCustomer_Customer")
+            Delete.ForeignKey("FK_tblMessageGroup_tblClass_Class")
                   .OnTable("tblMessageGroup");
             Delete.ForeignKey("FK_tblMessageGroup_tblCustomer_CreatedBy")
                   .OnTable("tblMessageGroup");
