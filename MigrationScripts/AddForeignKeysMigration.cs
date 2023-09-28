@@ -10,9 +10,9 @@ namespace MigrationScripts
             Create.ForeignKey("FK_tblAcademicYear_tblCountry_Country")
                   .FromTable("tblAcademicYear").ForeignColumn("CountryId")
                   .ToTable("tblCountry").PrimaryColumn("CountryId");
-            Create.ForeignKey("FK_tblAcademicYear_tblCustomer_CreatedBy")
-                  .FromTable("tblAcademicYear").ForeignColumn("AcademicYearCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblAcademicYear_tblCustomer_CreatedBy")
+            //      .FromTable("tblAcademicYear").ForeignColumn("AcademicYearCreatedBy")
+                  //.ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblAcademicYear_tblCustomer_UpdatedBy")
                   .FromTable("tblAcademicYear").ForeignColumn("AcademicYearUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerID");
@@ -897,8 +897,8 @@ namespace MigrationScripts
         {
             Delete.ForeignKey("FK_tblAcademicYear_tblCountry_Country")
                   .OnTable("tblAcademicYear");
-            Delete.ForeignKey("FK_tblAcademicYear_tblCustomer_CreatedBy")
-                  .OnTable("tblAcademicYear");
+            //Delete.ForeignKey("FK_tblAcademicYear_tblCustomer_CreatedBy")
+            //      .OnTable("tblAcademicYear");
             Delete.ForeignKey("FK_tblAcademicYear_tblCustomer_UpdatedBy")
                   .OnTable("tblAcademicYear");
 
