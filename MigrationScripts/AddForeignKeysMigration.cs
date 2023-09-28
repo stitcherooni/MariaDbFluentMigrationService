@@ -10,9 +10,9 @@ namespace MigrationScripts
             Create.ForeignKey("FK_tblAcademicYear_tblCountry_Country")
                   .FromTable("tblAcademicYear").ForeignColumn("CountryId")
                   .ToTable("tblCountry").PrimaryColumn("CountryId");
-            //Create.ForeignKey("FK_tblAcademicYear_tblCustomer_CreatedBy")
-            //      .FromTable("tblAcademicYear").ForeignColumn("AcademicYearCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblAcademicYear_tblCustomer_CreatedBy")
+                  .FromTable("tblAcademicYear").ForeignColumn("AcademicYearCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblAcademicYear_tblCustomer_UpdatedBy")
                   .FromTable("tblAcademicYear").ForeignColumn("AcademicYearUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerID");
@@ -897,21 +897,21 @@ namespace MigrationScripts
         {
             Delete.ForeignKey("FK_tblAcademicYear_tblCountry_Country")
                   .OnTable("tblAcademicYear");
-            Delete.ForeignKey("FK_tblAcademicYear_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblAcademicYear_tblCustomer_CreatedBy")
                   .OnTable("tblAcademicYear");
             Delete.ForeignKey("FK_tblAcademicYear_tblCustomer_UpdatedBy")
                   .OnTable("tblAcademicYear");
 
             Delete.ForeignKey("FK_tblApiAuditHistory_tblSchool_Application")
                   .OnTable("tblApiAuditHistory");
-            Delete.ForeignKey("FK_tblApiAuditHistory_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblApiAuditHistory_tblCustomer_CreatedBy")
                   .OnTable("tblApiAuditHistory");
             Delete.ForeignKey("FK_tblApiAuditHistory_tblCustomer_Customer")
                   .OnTable("tblApiAuditHistory");
 
             Delete.ForeignKey("FK_tblAuction_tblEvent_Event")
                   .OnTable("tblAuction");
-            Delete.ForeignKey("FK_tblAuction_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblAuction_tblCustomer_CreatedBy")
                   .OnTable("tblAuction");
             Delete.ForeignKey("FK_tblAuction_tblCustomer_UpdatedBy")
                   .OnTable("tblAuction");
@@ -920,12 +920,12 @@ namespace MigrationScripts
                   .OnTable("tblAuditHistory");
             Delete.ForeignKey("FK_tblAuditHistory_tblCustomer_Customer")
                   .OnTable("tblAuditHistory");
-            Delete.ForeignKey("FK_tblAuditHistory_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblAuditHistory_tblCustomer_CreatedBy")
                   .OnTable("tblAuditHistory");
             Delete.ForeignKey("FK_tblAuditHistory_tblCustomer_UpdatedBy")
                   .OnTable("tblAuditHistory");
 
-            Delete.ForeignKey("FK_tblAuditHistoryType_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblAuditHistoryType_tblCustomer_CreatedBy")
                   .OnTable("tblAuditHistoryType");
             Delete.ForeignKey("FK_tblAuditHistoryType_tblCustomer_UpdatedBy")
                   .OnTable("tblAuditHistoryType");
@@ -934,14 +934,14 @@ namespace MigrationScripts
                   .OnTable("tblBankedBusiness");
             Delete.ForeignKey("FK_tblBankedBusiness_tblCustomer_ComplianceCompletedBy")
                   .OnTable("tblBankedBusiness");
-            Delete.ForeignKey("FK_tblBankedBusiness_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblBankedBusiness_tblCustomer_CreatedBy")
                   .OnTable("tblBankedBusiness");
             Delete.ForeignKey("FK_tblBankedBusiness_tblCustomer_UpdatedBy")
                   .OnTable("tblBankedBusiness");
 
             Delete.ForeignKey("FK_tblBankedBusinessApplication_tblBankedBusiness_BankedBusiness")
                   .OnTable("tblBankedBusinessApplication");
-            Delete.ForeignKey("FK_tblBankedBusinessApplication_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblBankedBusinessApplication_tblCustomer_CreatedBy")
                   .OnTable("tblBankedBusinessApplication");
             Delete.ForeignKey("FK_tblBankedBusinessApplication_tblCustomer_UpdatedBy")
                   .OnTable("tblBankedBusinessApplication");
@@ -950,7 +950,7 @@ namespace MigrationScripts
                   .OnTable("tblBankedBusinessComplianceRule");
             Delete.ForeignKey("FK_tblBankedBusinessComplianceRule_tblComplianceRule_ComplianceRule")
                   .OnTable("tblBankedBusinessComplianceRule");
-            Delete.ForeignKey("FK_tblBankedBusinessComplianceRule_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblBankedBusinessComplianceRule_tblCustomer_CreatedBy")
                   .OnTable("tblBankedBusinessComplianceRule");
             Delete.ForeignKey("FK_tblBankedBusinessComplianceRule_tblCustomer_UpdatedBy")
                   .OnTable("tblBankedBusinessComplianceRule");
@@ -962,7 +962,7 @@ namespace MigrationScripts
                   .OnTable("tblBid");
             Delete.ForeignKey("FK_tblBid_tblCustomer_Customer")
                   .OnTable("tblBid");
-            Delete.ForeignKey("FK_tblBid_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblBid_tblCustomer_CreatedBy")
                   .OnTable("tblBid");
             Delete.ForeignKey("FK_tblBid_tblCustomer_UpdatedBy")
                   .OnTable("tblBid");
@@ -973,7 +973,7 @@ namespace MigrationScripts
                   .OnTable("tblBooking");
             Delete.ForeignKey("FK_tblBooking_tblTicket_Ticket")
                   .OnTable("tblBooking");
-            Delete.ForeignKey("FK_tblBooking_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblBooking_tblCustomer_CreatedBy")
                   .OnTable("tblBooking");
             Delete.ForeignKey("FK_tblBooking_tblCustomer_UpdatedBy")
                   .OnTable("tblBooking");
@@ -982,14 +982,14 @@ namespace MigrationScripts
                   .OnTable("tblBusinessDirectory");
             Delete.ForeignKey("FK_tblBusinessDirectory_tblSchool_School")
                   .OnTable("tblBusinessDirectory");
-            Delete.ForeignKey("FK_tblBusinessDirectory_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblBusinessDirectory_tblCustomer_CreatedBy")
                   .OnTable("tblBusinessDirectory");
             Delete.ForeignKey("FK_tblBusinessDirectory_tblCustomer_UpdatedBy")
                   .OnTable("tblBusinessDirectory");
 
             Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblSchool_School")
                   .OnTable("tblBusinessDirectoryCategory");
-            Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_CreatedBy")
                   .OnTable("tblBusinessDirectoryCategory");
             Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
                   .OnTable("tblBusinessDirectoryCategory");
@@ -1012,12 +1012,12 @@ namespace MigrationScripts
                   .OnTable("tblClassRep");
             Delete.ForeignKey("FK_tblClassRep_tblCustomer_Customer")
                   .OnTable("tblClassRep");
-            Delete.ForeignKey("FK_tblClassRep_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblClassRep_tblCustomer_CreatedBy")
                   .OnTable("tblClassRep");
             Delete.ForeignKey("FK_tblClassRep_tblCustomer_UpdatedBy")
                   .OnTable("tblClassRep");
 
-            Delete.ForeignKey("FK_tblComplianceRule_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblComplianceRule_tblCustomer_CreatedBy")
                   .OnTable("tblComplianceRule");
             Delete.ForeignKey("FK_tblComplianceRule_tblCustomer_UpdatedBy")
                   .OnTable("tblComplianceRule");
@@ -1026,27 +1026,27 @@ namespace MigrationScripts
                   .OnTable("tblComponent");
             Delete.ForeignKey("FK_tblComponent_tblComponentGroup_UpdatedBy")
                   .OnTable("tblComponent");
-            Delete.ForeignKey("FK_tblComponent_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblComponent_tblCustomer_CreatedBy")
                   .OnTable("tblComponent");
             Delete.ForeignKey("FK_tblComponent_tblCustomer_UpdatedBy")
                   .OnTable("tblComponent");
 
-            Delete.ForeignKey("FK_tblComponentGroup_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblComponentGroup_tblCustomer_CreatedBy")
                   .OnTable("tblComponentGroup");
             Delete.ForeignKey("FK_tblComponentGroup_tblCustomer_UpdatedBy")
                   .OnTable("tblComponentGroup");
 
-            Delete.ForeignKey("FK_tblComponentType_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblComponentType_tblCustomer_CreatedBy")
                   .OnTable("tblComponentType");
             Delete.ForeignKey("FK_tblComponentType_tblCustomer_UpdatedBy")
                   .OnTable("tblComponentType");
 
-            Delete.ForeignKey("FK_tblCountry_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblCountry_tblCustomer_CreatedBy")
                   .OnTable("tblCountry");
             Delete.ForeignKey("FK_tblCountry_tblCustomer_UpdatedBy")
                   .OnTable("tblCountry");
 
-            Delete.ForeignKey("FK_tblCurrency_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblCurrency_tblCustomer_CreatedBy")
                   .OnTable("tblCurrency");
             Delete.ForeignKey("FK_tblCurrency_tblCustomer_UpdatedBy")
                   .OnTable("tblCurrency");
@@ -1055,7 +1055,7 @@ namespace MigrationScripts
                   .OnTable("tblCustomer");
             Delete.ForeignKey("FK_tblCustomer_tblSchool_CustomerSchool")
                   .OnTable("tblCustomer");
-            Delete.ForeignKey("FK_tblCustomer_tblCustomer_DeletedById")
+            Delete.ForeignKey("FK_tblCustomer_tblCustomer_CreatedById")
                   .OnTable("tblCustomer");
             Delete.ForeignKey("FK_tblCustomer_tblCustomer_UpdatedById")
                   .OnTable("tblCustomer");
@@ -1069,7 +1069,7 @@ namespace MigrationScripts
 
             Delete.ForeignKey("FK_tblCustomerDevice_tblCustomer_Customer")
                   .OnTable("tblCustomerDevice");
-            Delete.ForeignKey("FK_tblCustomerDevice_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblCustomerDevice_tblCustomer_CreatedBy")
                   .OnTable("tblCustomerDevice");
             Delete.ForeignKey("FK_tblCustomerDevice_tblCustomer_UpdatedBy")
                   .OnTable("tblCustomerDevice");
@@ -1078,7 +1078,7 @@ namespace MigrationScripts
                   .OnTable("tblCustomerRole");
             Delete.ForeignKey("FK_tblCustomerRole_tblCustomer_Customer")
                   .OnTable("tblCustomerRole");
-            Delete.ForeignKey("FK_tblCustomerRole_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblCustomerRole_tblCustomer_CreatedBy")
                   .OnTable("tblCustomerRole");
             Delete.ForeignKey("FK_tblCustomerRole_tblCustomer_UpdatedBy")
                   .OnTable("tblCustomerRole");
@@ -1089,21 +1089,21 @@ namespace MigrationScripts
                   .OnTable("tblDependant");
             Delete.ForeignKey("FK_tblDependant_tblClass_Class")
                   .OnTable("tblDependant");
-            Delete.ForeignKey("FK_tblDependant_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblDependant_tblCustomer_CreatedBy")
                   .OnTable("tblDependant");
             Delete.ForeignKey("FK_tblDependant_tblCustomer_UpdatedBy")
                   .OnTable("tblDependant");
 
             Delete.ForeignKey("FK_tblDiscount_tblSchool_School")
                   .OnTable("tblDiscount");
-            Delete.ForeignKey("FK_tblDiscount_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblDiscount_tblCustomer_CreatedBy")
                   .OnTable("tblDiscount");
             Delete.ForeignKey("FK_tblDiscount_tblCustomer_UpdatedBy")
                   .OnTable("tblDiscount");
 
             Delete.ForeignKey("FK_tblEmail_tblMessage_Message")
                  .OnTable("tblEmail");
-            Delete.ForeignKey("FK_tblEmail_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblEmail_tblCustomer_CreatedBy")
                   .OnTable("tblEmail");
             Delete.ForeignKey("FK_tblEmail_tblCustomer_UpdatedBy")
                   .OnTable("tblEmail");
@@ -1124,7 +1124,7 @@ namespace MigrationScripts
                  .OnTable("tblEvent");
             Delete.ForeignKey("FK_tblEvent_tblCustomer_EventOrganiser8")
                  .OnTable("tblEvent");
-            Delete.ForeignKey("FK_tblEvent_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblEvent_tblCustomer_CreatedBy")
                   .OnTable("tblEvent");
             Delete.ForeignKey("FK_tblEvent_tblCustomer_UpdatedBy")
                   .OnTable("tblEvent");
@@ -1133,7 +1133,7 @@ namespace MigrationScripts
                  .OnTable("tblEventFile");
             Delete.ForeignKey("FK_tblEventFile_tblFile_File")
                  .OnTable("tblEventFile");
-            Delete.ForeignKey("FK_tblEventFile_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblEventFile_tblCustomer_CreatedBy")
                   .OnTable("tblEventFile");
             Delete.ForeignKey("FK_tblEventFile_tblCustomer_UpdatedBy")
                   .OnTable("tblEventFile");
@@ -1147,7 +1147,7 @@ namespace MigrationScripts
                  .OnTable("tblEventSponsor");
             Delete.ForeignKey("FK_tblEventSponsor_tblSponsor_Sponsor")
                  .OnTable("tblEventSponsor");
-            Delete.ForeignKey("FK_tblEventSponsor_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblEventSponsor_tblCustomer_CreatedBy")
                   .OnTable("tblEventSponsor");
             Delete.ForeignKey("FK_tblEventSponsor_tblCustomer_UpdatedBy")
                   .OnTable("tblEventSponsor");
@@ -1164,7 +1164,7 @@ namespace MigrationScripts
                   .OnTable("tblEventTask");
             Delete.ForeignKey("FK_tblEventTask_tblCustomer_EventTaskOrganiser4")
                   .OnTable("tblEventTask");
-            Delete.ForeignKey("FK_tblEventTask_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblEventTask_tblCustomer_CreatedBy")
                   .OnTable("tblEventTask");
             Delete.ForeignKey("FK_tblEventTask_tblCustomer_UpdatedBy")
                   .OnTable("tblEventTask");
@@ -1173,7 +1173,7 @@ namespace MigrationScripts
                   .OnTable("tblEventTaskCustomer");
             Delete.ForeignKey("FK_tblEventTaskCustomer_tblCustomer_Customer")
                   .OnTable("tblEventTaskCustomer");
-            Delete.ForeignKey("FK_tblEventTaskCustomer_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblEventTaskCustomer_tblCustomer_CreatedBy")
                   .OnTable("tblEventTaskCustomer");
             Delete.ForeignKey("FK_tblEventTaskCustomer_tblCustomer_UpdatedBy")
                   .OnTable("tblEventTaskCustomer");
@@ -1182,19 +1182,19 @@ namespace MigrationScripts
                  .OnTable("tblEventTaskGroup");
             Delete.ForeignKey("FK_tblEventTaskGroup_tblCustomer_EventTaskGroupOrganiser")
                  .OnTable("tblEventTaskGroup");
-            Delete.ForeignKey("FK_tblEventTaskGroup_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblEventTaskGroup_tblCustomer_CreatedBy")
                   .OnTable("tblEventTaskGroup");
             Delete.ForeignKey("FK_tblEventTaskGroup_tblCustomer_UpdatedBy")
                   .OnTable("tblEventTaskGroup");
 
-            Delete.ForeignKey("FK_tblEventType_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblEventType_tblCustomer_CreatedBy")
                   .OnTable("tblEventType");
             Delete.ForeignKey("FK_tblEventType_tblCustomer_UpdatedBy")
                   .OnTable("tblEventType");
 
             Delete.ForeignKey("FK_tblFaq_tblSchool_School")
                   .OnTable("tblFaq");
-            Delete.ForeignKey("FK_tblFaq_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblFaq_tblCustomer_CreatedBy")
                   .OnTable("tblFaq");
             Delete.ForeignKey("FK_tblFaq_tblCustomer_UpdatedBy")
                   .OnTable("tblFaq");
@@ -1203,7 +1203,7 @@ namespace MigrationScripts
                   .OnTable("tblFile");
             Delete.ForeignKey("FK_tblFile_tblSchool_School")
                   .OnTable("tblFile");
-            Delete.ForeignKey("FK_tblFile_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblFile_tblCustomer_CreatedBy")
                   .OnTable("tblFile");
             Delete.ForeignKey("FK_tblFile_tblCustomer_UpdatedBy")
                   .OnTable("tblFile");
@@ -1212,17 +1212,17 @@ namespace MigrationScripts
                   .OnTable("tblFileRole");
             Delete.ForeignKey("FK_tblFileRole_tblRole_Role")
                   .OnTable("tblFileRole");
-            Delete.ForeignKey("FK_tblFileRole_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblFileRole_tblCustomer_CreatedBy")
                   .OnTable("tblFileRole");
             Delete.ForeignKey("FK_tblFileRole_tblCustomer_UpdatedBy")
                   .OnTable("tblFileRole");
 
-            Delete.ForeignKey("FK_tblFileType_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblFileType_tblCustomer_CreatedBy")
                   .OnTable("tblFileType");
             Delete.ForeignKey("FK_tblFileType_tblCustomer_UpdatedBy")
                   .OnTable("tblFileType");
 
-            Delete.ForeignKey("FK_tblLanguage_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblLanguage_tblCustomer_CreatedBy")
                   .OnTable("tblLanguage");
             Delete.ForeignKey("FK_tblLanguage_tblCustomer_UpdatedBy")
                   .OnTable("tblLanguage");
@@ -1231,7 +1231,7 @@ namespace MigrationScripts
                   .OnTable("tblMessage");
             Delete.ForeignKey("FK_tblMessage_tblCustomer_Customer")
                   .OnTable("tblMessage");
-            Delete.ForeignKey("FK_tblMessage_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblMessage_tblCustomer_CreatedBy")
                   .OnTable("tblMessage");
             Delete.ForeignKey("FK_tblMessage_tblCustomer_UpdatedBy")
                   .OnTable("tblMessage");
@@ -1240,22 +1240,22 @@ namespace MigrationScripts
                   .OnTable("tblMessageGroup");
             Delete.ForeignKey("FK_tblMessageGroup_tblCustomer_Customer")
                   .OnTable("tblMessageGroup");
-            Delete.ForeignKey("FK_tblMessageGroup_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblMessageGroup_tblCustomer_CreatedBy")
                   .OnTable("tblMessageGroup");
 
-            Delete.ForeignKey("FK_tblMessageStatus_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblMessageStatus_tblCustomer_CreatedBy")
                   .OnTable("tblMessageStatus");
             Delete.ForeignKey("FK_tblMessageStatus_tblCustomer_UpdatedBy")
                   .OnTable("tblMessageStatus");
 
-            Delete.ForeignKey("FK_tblMessageType_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblMessageType_tblCustomer_CreatedBy")
                   .OnTable("tblMessageType");
             Delete.ForeignKey("FK_tblMessageType_tblCustomer_UpdatedBy")
                   .OnTable("tblMessageType");
 
             Delete.ForeignKey("FK_tblNews_tblSchool_School")
                   .OnTable("tblNews");
-            Delete.ForeignKey("FK_tblNews_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblNews_tblCustomer_CreatedBy")
                   .OnTable("tblNews");
             Delete.ForeignKey("FK_tblNews_tblCustomer_UpdatedBy")
                   .OnTable("tblNews");
@@ -1266,7 +1266,7 @@ namespace MigrationScripts
                   .OnTable("tblOrder");
             Delete.ForeignKey("FK_tblOrder_tblOrderType_OrderType")
                   .OnTable("tblOrder");
-            Delete.ForeignKey("FK_tblOrder_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblOrder_tblCustomer_CreatedBy")
                   .OnTable("tblOrder");
             Delete.ForeignKey("FK_tblOrder_tblCustomer_UpdatedBy")
                   .OnTable("tblOrder");
@@ -1277,36 +1277,36 @@ namespace MigrationScripts
                   .OnTable("tblOrderItem");
             Delete.ForeignKey("FK_tblOrderItem_tblProductPaymentScheme_ProductPaymentScheme")
                   .OnTable("tblOrderItem");
-            Delete.ForeignKey("FK_tblOrderItem_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblOrderItem_tblCustomer_CreatedBy")
                   .OnTable("tblOrderItem");
             Delete.ForeignKey("FK_tblOrderItem_tblCustomer_UpdatedBy")
                   .OnTable("tblOrderItem");
 
-            Delete.ForeignKey("FK_tblOrganisationType_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblOrganisationType_tblCustomer_CreatedBy")
                   .OnTable("tblOrganisationType");
             Delete.ForeignKey("FK_tblOrganisationType_tblCustomer_UpdatedBy")
                   .OnTable("tblOrganisationType");
 
             Delete.ForeignKey("FK_tblPage_tblSchool_School")
                   .OnTable("tblPage");
-            Delete.ForeignKey("FK_tblPage_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblPage_tblCustomer_CreatedBy")
                   .OnTable("tblPage");
             Delete.ForeignKey("FK_tblPage_tblCustomer_UpdatedBy")
                   .OnTable("tblPage");
 
             Delete.ForeignKey("FK_tblPartner_tblSchool_School")
                   .OnTable("tblPartner");
-            Delete.ForeignKey("FK_tblPartner_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblPartner_tblCustomer_CreatedBy")
                   .OnTable("tblPartner");
             Delete.ForeignKey("FK_tblPartner_tblCustomer_UpdatedBy")
                   .OnTable("tblPartner");
 
-            Delete.ForeignKey("FK_tblPaymentMethod_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblPaymentMethod_tblCustomer_CreatedBy")
                   .OnTable("tblPaymentMethod");
             Delete.ForeignKey("FK_tblPaymentMethod_tblCustomer_UpdatedBy")
                   .OnTable("tblPaymentMethod");
 
-            Delete.ForeignKey("FK_tblPaymentStatus_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblPaymentStatus_tblCustomer_CreatedBy")
                   .OnTable("tblPaymentStatus");
             Delete.ForeignKey("FK_tblPaymentStatus_tblCustomer_UpdatedBy")
                   .OnTable("tblPaymentStatus");
@@ -1314,14 +1314,14 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblPaypal_tblSchool_PaypalParentTransaction")
                   .OnTable("tblPaypal");
 
-            Delete.ForeignKey("FK_tblPlatformPartner_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblPlatformPartner_tblCustomer_CreatedBy")
                   .OnTable("tblPlatformPartner");
             Delete.ForeignKey("FK_tblPlatformPartner_tblCustomer_UpdatedBy")
                   .OnTable("tblPlatformPartner");
 
             Delete.ForeignKey("FK_tblPoll_tblSchool_School")
                   .OnTable("tblPoll");
-            Delete.ForeignKey("FK_tblPoll_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblPoll_tblCustomer_CreatedBy")
                   .OnTable("tblPoll");
             Delete.ForeignKey("FK_tblPoll_tblCustomer_UpdatedBy")
                   .OnTable("tblPoll");
@@ -1330,14 +1330,14 @@ namespace MigrationScripts
                   .OnTable("tblPollAnswer");
             Delete.ForeignKey("FK_tblPollAnswer_tblCustomer_Customer")
                   .OnTable("tblPollAnswer");
-            Delete.ForeignKey("FK_tblPollAnswer_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblPollAnswer_tblCustomer_CreatedBy")
                   .OnTable("tblPollAnswer");
             Delete.ForeignKey("FK_tblPollAnswer_tblCustomer_UpdatedBy")
                   .OnTable("tblPollAnswer");
 
             Delete.ForeignKey("FK_tblPollOption_tblPoll_Poll")
                   .OnTable("tblPollOption");
-            Delete.ForeignKey("FK_tblPollOption_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblPollOption_tblCustomer_CreatedBy")
                   .OnTable("tblPollOption");
             Delete.ForeignKey("FK_tblPollOption_tblCustomer_UpdatedBy")
                   .OnTable("tblPollOption");
@@ -1350,14 +1350,14 @@ namespace MigrationScripts
                  .OnTable("tblProduct");
             Delete.ForeignKey("FK_tblProduct_tblProductType_ProductType")
                   .OnTable("tblProduct");
-            Delete.ForeignKey("FK_tblProduct_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblProduct_tblCustomer_CreatedBy")
                   .OnTable("tblProduct");
             Delete.ForeignKey("FK_tblProduct_tblCustomer_UpdatedBy")
                   .OnTable("tblProduct");
 
             Delete.ForeignKey("FK_tblProductAttribute_tblProduct_Product")
                   .OnTable("tblProductAttribute");
-            Delete.ForeignKey("FK_tblProductAttribute_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblProductAttribute_tblCustomer_CreatedBy")
                   .OnTable("tblProductAttribute");
             Delete.ForeignKey("FK_tblProductAttribute_tblCustomer_UpdatedBy")
                   .OnTable("tblProductAttribute");
@@ -1366,14 +1366,14 @@ namespace MigrationScripts
                   .OnTable("tblProductClass");
             Delete.ForeignKey("FK_tblProductClass_tblProduct_Product")
                   .OnTable("tblProductClass");
-            Delete.ForeignKey("FK_tblProductClass_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblProductClass_tblCustomer_CreatedBy")
                   .OnTable("tblProductClass");
             Delete.ForeignKey("FK_tblProductClass_tblCustomer_UpdatedBy")
                   .OnTable("tblProductClass");
 
             Delete.ForeignKey("FK_tblProductPayment_tblProduct_Product")
                   .OnTable("tblProductPayment");
-            Delete.ForeignKey("FK_tblProductPayment_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblProductPayment_tblCustomer_CreatedBy")
                   .OnTable("tblProductPayment");
             Delete.ForeignKey("FK_tblProductPayment_tblCustomer_UpdatedBy")
                   .OnTable("tblProductPayment");
@@ -1382,12 +1382,12 @@ namespace MigrationScripts
                   .OnTable("tblProductPaymentScheme");
             Delete.ForeignKey("FK_tblProductPaymentScheme_tblProduct_Product")
                   .OnTable("tblProductPaymentScheme");
-            Delete.ForeignKey("FK_tblProductPaymentScheme_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblProductPaymentScheme_tblCustomer_CreatedBy")
                   .OnTable("tblProductPaymentScheme");
             Delete.ForeignKey("FK_tblProductPaymentScheme_tblCustomer_UpdatedBy")
                   .OnTable("tblProductPaymentScheme");
 
-            Delete.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_CreatedBy")
                   .OnTable("tblProductPaymentSchemeFrequency");
             Delete.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_UpdatedBy")
                   .OnTable("tblProductPaymentSchemeFrequency");
@@ -1493,14 +1493,14 @@ namespace MigrationScripts
 
             Delete.ForeignKey("FK_tblSubGroup_tblEvent_Event")
                   .OnTable("tblSubGroup");
-            Delete.ForeignKey("FK_tblSubGroup_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblSubGroup_tblCustomer_CreatedBy")
                   .OnTable("tblSubGroup");
             Delete.ForeignKey("FK_tblSubGroup_tblCustomer_UpdatedBy")
                   .OnTable("tblSubGroup");
 
             Delete.ForeignKey("FK_tblTicket_tblOrderItem_OrderItem")
                   .OnTable("tblTicket");
-            Delete.ForeignKey("FK_tblTicket_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblTicket_tblCustomer_CreatedBy")
                   .OnTable("tblTicket");
             Delete.ForeignKey("FK_tblTicket_tblCustomer_UpdatedBy")
                   .OnTable("tblTicket");
@@ -1511,7 +1511,7 @@ namespace MigrationScripts
                   .OnTable("tblTranslation");
             Delete.ForeignKey("FK_tblTranslation_tblLanguage_Language")
                   .OnTable("tblTranslation");
-            Delete.ForeignKey("FK_tblTranslation_tblCustomer_DeletedBy")
+            Delete.ForeignKey("FK_tblTranslation_tblCustomer_CreatedBy")
                   .OnTable("tblCustomer");
             Delete.ForeignKey("FK_tblTranslation_tblCustomer_UpdatedBy")
                   .OnTable("tblTranslation");
