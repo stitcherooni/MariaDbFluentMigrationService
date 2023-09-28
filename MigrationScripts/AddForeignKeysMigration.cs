@@ -477,9 +477,9 @@ namespace MigrationScripts
                   .FromTable("tblFileType").ForeignColumn("FileTypeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblLanguage_tblCustomer_CreatedBy")
-                  .FromTable("tblLanguage").ForeignColumn("LanguageCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblLanguage_tblCustomer_CreatedBy")
+            //      .FromTable("tblLanguage").ForeignColumn("LanguageCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblLanguage_tblCustomer_UpdatedBy")
                   .FromTable("tblLanguage").ForeignColumn("LanguageUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1222,8 +1222,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblFileType_tblCustomer_UpdatedBy")
                   .OnTable("tblFileType");
 
-            Delete.ForeignKey("FK_tblLanguage_tblCustomer_CreatedBy")
-                  .OnTable("tblLanguage");
+            //Delete.ForeignKey("FK_tblLanguage_tblCustomer_CreatedBy")
+            //      .OnTable("tblLanguage");
             Delete.ForeignKey("FK_tblLanguage_tblCustomer_UpdatedBy")
                   .OnTable("tblLanguage");
 
