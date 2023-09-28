@@ -877,9 +877,9 @@ namespace MigrationScripts
                   .FromTable("tblTicket").ForeignColumn("TicketUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblTranslation_tblSchool_Application")
-                 .FromTable("tblTranslation").ForeignColumn("ApplicationId")
-                 .ToTable("tblSchool").PrimaryColumn("SchoolId");
+            //Create.ForeignKey("FK_tblTranslation_tblSchool_Application")
+            //     .FromTable("tblTranslation").ForeignColumn("ApplicationId")
+            //     .ToTable("tblSchool").PrimaryColumn("SchoolId");
             Create.ForeignKey("FK_tblTranslation_tblComponent_Component")
                   .FromTable("tblTranslation").ForeignColumn("ComponentId")
                   .ToTable("tblComponent").PrimaryColumn("ComponentId");
@@ -1505,8 +1505,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblTicket_tblCustomer_UpdatedBy")
                   .OnTable("tblTicket");
 
-            Delete.ForeignKey("FK_tblTranslation_tblSchool_Application")
-                  .OnTable("tblTranslation");
+            //Delete.ForeignKey("FK_tblTranslation_tblSchool_Application")
+            //      .OnTable("tblTranslation");
             Delete.ForeignKey("FK_tblTranslation_tblComponent_Component")
                   .OnTable("tblTranslation");
             Delete.ForeignKey("FK_tblTranslation_tblLanguage_Language")
