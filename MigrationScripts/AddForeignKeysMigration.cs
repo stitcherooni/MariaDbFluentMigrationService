@@ -497,19 +497,19 @@ namespace MigrationScripts
                   .FromTable("tblMessage").ForeignColumn("MessageUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
-            //      .FromTable("tblMessageGroup").ForeignColumn("EventId")
-            //      .ToTable("tbEvent").PrimaryColumn("EventId");
-            //Create.ForeignKey("FK_tblMessageGroup_tblCustomer_Customer")
-            //      .FromTable("tblMessageGroup").ForeignColumn("CustomerId")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
-            //Create.ForeignKey("FK_tblMessageGroup_tblCustomer_CreatedBy")
-            //      .FromTable("tblMessageGroup").ForeignColumn("MessageGroupCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
-
-            Create.ForeignKey("FK_tblMessageStatus_tblCustomer_CreatedBy")
-                  .FromTable("tblMessageStatus").ForeignColumn("MessageStatusCreatedBy")
+            Create.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
+                  .FromTable("tblMessageGroup").ForeignColumn("EventId")
+                  .ToTable("tbEvent").PrimaryColumn("EventId");
+            Create.ForeignKey("FK_tblMessageGroup_tblCustomer_Customer")
+                  .FromTable("tblMessageGroup").ForeignColumn("CustomerId")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblMessageGroup_tblCustomer_CreatedBy")
+                  .FromTable("tblMessageGroup").ForeignColumn("MessageGroupCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+
+            //Create.ForeignKey("FK_tblMessageStatus_tblCustomer_CreatedBy")
+            //      .FromTable("tblMessageStatus").ForeignColumn("MessageStatusCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblMessageStatus_tblCustomer_UpdatedBy")
                   .FromTable("tblMessageStatus").ForeignColumn("MessageStatusUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1236,15 +1236,15 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblMessage_tblCustomer_UpdatedBy")
                   .OnTable("tblMessage");
 
-            //Delete.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
-            //      .OnTable("tblMessageGroup");
-            //Delete.ForeignKey("FK_tblMessageGroup_tblCustomer_Customer")
-            //      .OnTable("tblMessageGroup");
-            //Delete.ForeignKey("FK_tblMessageGroup_tblCustomer_CreatedBy")
-            //      .OnTable("tblMessageGroup");
+            Delete.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
+                  .OnTable("tblMessageGroup");
+            Delete.ForeignKey("FK_tblMessageGroup_tblCustomer_Customer")
+                  .OnTable("tblMessageGroup");
+            Delete.ForeignKey("FK_tblMessageGroup_tblCustomer_CreatedBy")
+                  .OnTable("tblMessageGroup");
 
-            Delete.ForeignKey("FK_tblMessageStatus_tblCustomer_CreatedBy")
-                  .OnTable("tblMessageStatus");
+            //Delete.ForeignKey("FK_tblMessageStatus_tblCustomer_CreatedBy")
+            //      .OnTable("tblMessageStatus");
             Delete.ForeignKey("FK_tblMessageStatus_tblCustomer_UpdatedBy")
                   .OnTable("tblMessageStatus");
 
