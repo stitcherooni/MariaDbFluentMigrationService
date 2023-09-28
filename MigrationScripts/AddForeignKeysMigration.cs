@@ -587,9 +587,9 @@ namespace MigrationScripts
                   .FromTable("tblPartner").ForeignColumn("PartnerUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblPaymentMethod_tblCustomer_CreatedBy")
-                  .FromTable("tblPaymentMethod").ForeignColumn("PaymentMethodCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblPaymentMethod_tblCustomer_CreatedBy")
+            //      .FromTable("tblPaymentMethod").ForeignColumn("PaymentMethodCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblPaymentMethod_tblCustomer_UpdatedBy")
                   .FromTable("tblPaymentMethod").ForeignColumn("PaymentMethodUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1301,8 +1301,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblPartner_tblCustomer_UpdatedBy")
                   .OnTable("tblPartner");
 
-            Delete.ForeignKey("FK_tblPaymentMethod_tblCustomer_CreatedBy")
-                  .OnTable("tblPaymentMethod");
+            //Delete.ForeignKey("FK_tblPaymentMethod_tblCustomer_CreatedBy")
+            //      .OnTable("tblPaymentMethod");
             Delete.ForeignKey("FK_tblPaymentMethod_tblCustomer_UpdatedBy")
                   .OnTable("tblPaymentMethod");
 
