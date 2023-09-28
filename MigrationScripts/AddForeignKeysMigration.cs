@@ -714,7 +714,7 @@ namespace MigrationScripts
             //      .FromTable("tblProductPaymentSchemeFrequency").ForeignColumn("ProductPaymentSchemeFrequencyCreatedBy")
             //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_UpdatedBy")
-                  .FromTable("tblProductPaymentSchemeFrequency").ForeignColumn("ProductPaymentSchemeFrequencyUpdatedBy")
+                  .FromTable("tblProductPaymentSchemeFrequency").ForeignColumn("ProductPaymentSchemeFrequencypdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
             Create.ForeignKey("FK_tblProductQuestion_tblCustomer_CreatedBy")
