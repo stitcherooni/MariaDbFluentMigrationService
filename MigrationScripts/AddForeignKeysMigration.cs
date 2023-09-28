@@ -887,8 +887,8 @@ namespace MigrationScripts
                  .FromTable("tblTranslation").ForeignColumn("LanguageId")
                  .ToTable("tblLanguage").PrimaryColumn("LanguageId");
             Create.ForeignKey("FK_tblTranslation_tblCustomer_CreatedBy")
-                  .FromTable("tblCustomer").ForeignColumn("tblTranslationCreatedBy")
-                  .ToTable("tblv").PrimaryColumn("CustomerId");
+                  .FromTable("tblTranslation").ForeignColumn("TranslationCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblTranslation_tblCustomer_UpdatedBy")
                   .FromTable("tblTranslation").ForeignColumn("TranslationUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
