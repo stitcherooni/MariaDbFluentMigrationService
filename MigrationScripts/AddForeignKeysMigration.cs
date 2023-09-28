@@ -895,8 +895,8 @@ namespace MigrationScripts
         }
         public override void Down()
         {
-            Delete.ForeignKey("FK_tblAcademicYear_tblCountry_Country");
-                  //.OnTable("tblAcademicYear");
+            Delete.ForeignKey("FK_tblAcademicYear_tblCountry_Country")
+                  .OnTable("tblAcademicYear");
             //Delete.ForeignKey("FK_tblAcademicYear_tblCustomer_CreatedBy")
             //      .OnTable("tblAcademicYear");
             Delete.ForeignKey("FK_tblAcademicYear_tblCustomer_UpdatedBy")
