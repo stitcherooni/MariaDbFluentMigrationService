@@ -1486,7 +1486,7 @@ namespace MigrationScripts
                   .OnTable("tblSponsorImpression");
 
             Delete.ForeignKey("FK_tblStripeFee_tblStripePayout_StripePayout")
-                  .OnTable("tblStripeFee").;
+                  .OnTable("tblStripeFee");
 
             Delete.ForeignKey("FK_tblStripeWebHook_tblOrder_Order")
                   .OnTable("tblStripeWebHook");
