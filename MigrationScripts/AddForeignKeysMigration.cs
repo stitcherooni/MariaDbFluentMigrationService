@@ -812,9 +812,9 @@ namespace MigrationScripts
                   .FromTable("tblSchool").ForeignColumn("PlanTypeId")
                   .ToTable("tblPlanType").PrimaryColumn("PlanTypeId");
 
-            Create.ForeignKey("FK_tblSchoolYear_tblCustomer_CreatedBy")
-                  .FromTable("tblSchoolYear").ForeignColumn("SchoolYearCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblSchoolYear_tblCustomer_CreatedBy")
+            //      .FromTable("tblSchoolYear").ForeignColumn("SchoolYearCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblSchoolYear_tblCustomer_UpdatedBy")
                   .FromTable("tblSchoolYear").ForeignColumn("SchoolYearUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1459,8 +1459,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblSchool_tblPlanType_PlanType")
                   .OnTable("tblSchool");
 
-            Delete.ForeignKey("FK_tblSchoolYear_tblCustomer_CreatedBy")
-                  .OnTable("tblSchoolYear");
+            //Delete.ForeignKey("FK_tblSchoolYear_tblCustomer_CreatedBy")
+            //      .OnTable("tblSchoolYear");
             Delete.ForeignKey("FK_tblSchoolYear_tblCustomer_UpdatedBy")
                   .OnTable("tblSchoolYear");
 
