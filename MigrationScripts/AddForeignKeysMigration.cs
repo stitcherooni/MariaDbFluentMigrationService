@@ -202,9 +202,9 @@ namespace MigrationScripts
                   .FromTable("tblComponent").ForeignColumn("ComponentUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblComponentGroup_tblCustomer_CreatedBy")
-                  .FromTable("tblComponentGroup").ForeignColumn("ComponentGroupCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblComponentGroup_tblCustomer_CreatedBy")
+            //      .FromTable("tblComponentGroup").ForeignColumn("ComponentGroupCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblComponentGroup_tblCustomer_UpdatedBy")
                   .FromTable("tblComponentGroup").ForeignColumn("ComponentGroupUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1031,8 +1031,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblComponent_tblCustomer_UpdatedBy")
                   .OnTable("tblComponent");
 
-            Delete.ForeignKey("FK_tblComponentGroup_tblCustomer_CreatedBy")
-                  .OnTable("tblComponentGroup");
+            //Delete.ForeignKey("FK_tblComponentGroup_tblCustomer_CreatedBy")
+            //      .OnTable("tblComponentGroup");
             Delete.ForeignKey("FK_tblComponentGroup_tblCustomer_UpdatedBy")
                   .OnTable("tblComponentGroup");
 
