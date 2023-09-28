@@ -80,7 +80,7 @@ namespace MigrationScripts
                   .FromTable("tblBankedBusinessApplication").ForeignColumn("BankedBusinessApplicationUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblBankedBusinessComplianceRule_tblBankedBusiness_BankedBusiness")
+            Create.ForeignKey("FK_tblBBusinessComplianceRule_tblBankedBusiness_BankedBusiness")
                   .FromTable("tblBankedBusinessComplianceRule").ForeignColumn("BankedBusinessId")
                   .ToTable("tblBankedBusiness").PrimaryColumn("BankedBusinessId");
             Create.ForeignKey("FK_tblBankedBusinessComplianceRule_tblComplianceRule_ComplianceRule")
@@ -946,7 +946,7 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblBankedBusinessApplication_tblCustomer_UpdatedBy")
                   .OnTable("tblBankedBusinessApplication");
 
-            Delete.ForeignKey("FK_tblBankedBusinessComplianceRule_tblBankedBusiness_BankedBusiness")
+            Delete.ForeignKey("FK_tblBBusinessComplianceRule_tblBankedBusiness_BankedBusiness")
                   .OnTable("tblBankedBusinessComplianceRule");
             Delete.ForeignKey("FK_tblBankedBusinessComplianceRule_tblComplianceRule_ComplianceRule")
                   .OnTable("tblBankedBusinessComplianceRule");
