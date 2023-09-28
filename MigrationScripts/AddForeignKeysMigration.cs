@@ -159,9 +159,9 @@ namespace MigrationScripts
                   .FromTable("tblBusinessDirectoryClick").ForeignColumn("CustomerId")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblClass_tblBusinessDirectory_BusinessDirectory")
-                  .FromTable("tblClass").ForeignColumn("BusinessDirectoryId")
-                  .ToTable("tblBusinessDirectory").PrimaryColumn("BusinessDirectoryId");
+            Create.ForeignKey("FK_tblClass_tblBusinessDirectory_SchoolYear")
+                  .FromTable("tblClass").ForeignColumn("SchoolYearId")
+                  .ToTable("tblSchoolYear").PrimaryColumn("SchoolYearId");
             Create.ForeignKey("FK_tblClass_tblSchool_School")
                   .FromTable("tblClass").ForeignColumn("SchoolId")
                   .ToTable("tblSchool").PrimaryColumn("SchoolId");
@@ -1001,7 +1001,7 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblBusinessDirectoryClick_tblCustomer_Customer")
                   .OnTable("tblBusinessDirectoryClick");
 
-            Delete.ForeignKey("FK_tblClass_tblBusinessDirectory_BusinessDirectory")
+            Delete.ForeignKey("FK_tblClass_tblBusinessDirectory_SchoolYear")
                   .OnTable("tblClass");
             Delete.ForeignKey("FK_tblClass_tblSchool_School")
                   .OnTable("tblClass");
