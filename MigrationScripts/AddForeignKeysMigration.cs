@@ -889,9 +889,9 @@ namespace MigrationScripts
             //Create.ForeignKey("FK_tblTranslation_tblCustomer_CreatedBy")
             //      .FromTable("tblTranslation").ForeignColumn("TranslationCreatedBy")
             //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
-            Create.ForeignKey("FK_tblTranslation_tblCustomer_UpdatedBy")
-                  .FromTable("tblTranslation").ForeignColumn("TranslationUpdatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblTranslation_tblCustomer_UpdatedBy")
+            //      .FromTable("tblTranslation").ForeignColumn("TranslationUpdatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
         }
         public override void Down()
         {
@@ -1513,8 +1513,8 @@ namespace MigrationScripts
                   .OnTable("tblTranslation");
             //Delete.ForeignKey("FK_tblTranslation_tblCustomer_CreatedBy")
             //      .OnTable("tblCustomer");
-            Delete.ForeignKey("FK_tblTranslation_tblCustomer_UpdatedBy")
-                  .OnTable("tblTranslation");
+            //Delete.ForeignKey("FK_tblTranslation_tblCustomer_UpdatedBy")
+            //      .OnTable("tblTranslation");
         }
     }
 }
