@@ -126,7 +126,7 @@ namespace MigrationScripts
                   .FromTable("tblBooking").ForeignColumn("BookingUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblBDirectory_tblBusinessDirectoryCategory_BusinessDirectoryCategory")
+            Create.ForeignKey("FK_tblBDirectory_tblBDirectoryCategory_BusinessDirectoryCategory")
                   .FromTable("tblBusinessDirectory").ForeignColumn("BusinessDirectoryCategoryId")
                   .ToTable("tblBusinessDirectoryCategory").PrimaryColumn("BusinessDirectoryCategoryId");
             Create.ForeignKey("FK_tblBusinessDirectory_tblSchool_School")
@@ -978,7 +978,7 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblBooking_tblCustomer_UpdatedBy")
                   .OnTable("tblBooking");
 
-            Delete.ForeignKey("FK_tblBDirectory_tblBusinessDirectoryCategory_BusinessDirectoryCategory")
+            Delete.ForeignKey("FK_tblBDirectory_tblBDirectoryCategory_BusinessDirectoryCategory")
                   .OnTable("tblBusinessDirectory");
             Delete.ForeignKey("FK_tblBusinessDirectory_tblSchool_School")
                   .OnTable("tblBusinessDirectory");
