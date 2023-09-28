@@ -605,9 +605,9 @@ namespace MigrationScripts
                   .FromTable("tblPaypal").ForeignColumn("PaypalParentTransactionId")
                   .ToTable("tblPaypal").PrimaryColumn("PaypalTransactionId");
 
-            Create.ForeignKey("FK_tblPlatformPartner_tblCustomer_CreatedBy")
-                  .FromTable("tblPlatformPartner").ForeignColumn("PlatformPartnerCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblPlatformPartner_tblCustomer_CreatedBy")
+            //      .FromTable("tblPlatformPartner").ForeignColumn("PlatformPartnerCreatedBy")
+                  //.ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblPlatformPartner_tblCustomer_UpdatedBy")
                   .FromTable("tblPlatformPartner").ForeignColumn("PlatformPartnerUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1314,8 +1314,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblPaypal_tblPaypal_PaypalParentTransaction")
                   .OnTable("tblPaypal");
 
-            Delete.ForeignKey("FK_tblPlatformPartner_tblCustomer_CreatedBy")
-                  .OnTable("tblPlatformPartner");
+            //Delete.ForeignKey("FK_tblPlatformPartner_tblCustomer_CreatedBy")
+            //      .OnTable("tblPlatformPartner");
             Delete.ForeignKey("FK_tblPlatformPartner_tblCustomer_UpdatedBy")
                   .OnTable("tblPlatformPartner");
 
