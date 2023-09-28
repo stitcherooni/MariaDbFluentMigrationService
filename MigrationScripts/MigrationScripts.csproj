@@ -8,12 +8,10 @@
 
   <ItemGroup>
     <PackageReference Include="FluentMigrator" Version="3.3.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.11" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="language.sql">
+    <None Update="Database-Import-14022023.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
