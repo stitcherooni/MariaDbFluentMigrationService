@@ -601,7 +601,7 @@ namespace MigrationScripts
                   .FromTable("tblPaymentStatus").ForeignColumn("PaymentStatusUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblPaypal_tblSchool_PaypalParentTransaction")
+            Create.ForeignKey("FK_tblPaypal_tblPaypal_PaypalParentTransaction")
                   .FromTable("tblPaypal").ForeignColumn("PaypalParentTransactionId")
                   .ToTable("tblPaypal").PrimaryColumn("PaypalId");
 
@@ -1311,7 +1311,7 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblPaymentStatus_tblCustomer_UpdatedBy")
                   .OnTable("tblPaymentStatus");
 
-            Delete.ForeignKey("FK_tblPaypal_tblSchool_PaypalParentTransaction")
+            Delete.ForeignKey("FK_tblPaypal_tblPaypal_PaypalParentTransaction")
                   .OnTable("tblPaypal");
 
             Delete.ForeignKey("FK_tblPlatformPartner_tblCustomer_CreatedBy")
