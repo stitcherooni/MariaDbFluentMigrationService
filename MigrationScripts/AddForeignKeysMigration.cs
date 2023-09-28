@@ -514,9 +514,9 @@ namespace MigrationScripts
                   .FromTable("tblMessageStatus").ForeignColumn("MessageStatusUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblMessageType_tblCustomer_CreatedBy")
-                  .FromTable("tblMessageType").ForeignColumn("MessageTypeCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerID");
+            //Create.ForeignKey("FK_tblMessageType_tblCustomer_CreatedBy")
+            //      .FromTable("tblMessageType").ForeignColumn("MessageTypeCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblMessageType_tblCustomer_UpdatedBy")
                   .FromTable("tblMessageType").ForeignColumn("MessageTypeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
