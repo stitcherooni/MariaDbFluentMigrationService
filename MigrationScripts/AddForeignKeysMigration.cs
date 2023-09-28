@@ -50,9 +50,9 @@ namespace MigrationScripts
                   .FromTable("tblAuditHistory").ForeignColumn("AuditHistoryUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblAuditHistoryType_tblCustomer_CreatedBy")
-                  .FromTable("tblAuditHistoryType").ForeignColumn("AuditHistoryTypeCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblAuditHistoryType_tblCustomer_CreatedBy")
+            //      .FromTable("tblAuditHistoryType").ForeignColumn("AuditHistoryTypeCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblAuditHistoryType_tblCustomer_UpdatedBy")
                   .FromTable("tblAuditHistoryType").ForeignColumn("AuditHistoryTypeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -925,8 +925,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblAuditHistory_tblCustomer_UpdatedBy")
                   .OnTable("tblAuditHistory");
 
-            Delete.ForeignKey("FK_tblAuditHistoryType_tblCustomer_CreatedBy")
-                  .OnTable("tblAuditHistoryType");
+            //Delete.ForeignKey("FK_tblAuditHistoryType_tblCustomer_CreatedBy")
+            //      .OnTable("tblAuditHistoryType");
             Delete.ForeignKey("FK_tblAuditHistoryType_tblCustomer_UpdatedBy")
                   .OnTable("tblAuditHistoryType");
 
