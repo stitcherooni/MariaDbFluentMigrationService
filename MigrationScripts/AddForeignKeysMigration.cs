@@ -543,9 +543,6 @@ namespace MigrationScripts
             Create.ForeignKey("FK_tblOrder_tblPaypal_OrderTransaction")
                   .FromTable("tblOrder").ForeignColumn("OrderTransactionId")
                   .ToTable("tblPaypal").PrimaryColumn("PaypalId");
-            Create.ForeignKey("FK_tblOrder_tblOrderType_OrderType")
-                  .FromTable("tblOrder").ForeignColumn("OrderTypeId")
-                  .ToTable("tblOrderType").PrimaryColumn("OrderTypeId");
             Create.ForeignKey("FK_tblOrder_tblCustomer_CreatedBy")
                   .FromTable("tblOrder").ForeignColumn("OrderCreatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
