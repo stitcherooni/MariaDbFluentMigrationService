@@ -851,7 +851,7 @@ namespace MigrationScripts
 
             Create.ForeignKey("FK_tblStripeFee_tblStripePayout_StripePayout")
                  .FromTable("tblStripeFee").ForeignColumn("StripePayoutId")
-                 .ToTable("tblStripePayout").PrimaryColumn("StripePayoutId");
+                 .ToTable("tblStripePayout").PrimaryColumn("PayoutId");
 
             Create.ForeignKey("FK_tblStripeWebHook_tblOrder_Order")
                   .FromTable("tblStripeWebHook").ForeignColumn("OrderId")
