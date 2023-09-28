@@ -435,13 +435,13 @@ namespace MigrationScripts
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
             Create.ForeignKey("FK_tblFaq_tblSchool_School")
-                  .FromTable("tblFaq").ForeignColumn("SchoolId")
+                  .FromTable("tblFAQ").ForeignColumn("SchoolId")
                   .ToTable("tblSchool").PrimaryColumn("SchoolId");
             Create.ForeignKey("FK_tblFaq_tblCustomer_CreatedBy")
-                  .FromTable("tblFaq").ForeignColumn("FaqCreatedBy")
+                  .FromTable("tblFAQ").ForeignColumn("FaqCreatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblFaq_tblCustomer_UpdatedBy")
-                  .FromTable("tblFaq").ForeignColumn("FaqUpdatedBy")
+                  .FromTable("tblFAQ").ForeignColumn("FaqUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
             Create.ForeignKey("FK_tblFile_tblFileType_FileType")
@@ -1193,11 +1193,11 @@ namespace MigrationScripts
                   .OnTable("tblEventType");
 
             Delete.ForeignKey("FK_tblFaq_tblSchool_School")
-                  .OnTable("tblFaq");
+                  .OnTable("tblFAQ");
             Delete.ForeignKey("FK_tblFaq_tblCustomer_CreatedBy")
-                  .OnTable("tblFaq");
+                  .OnTable("tblFAQ");
             Delete.ForeignKey("FK_tblFaq_tblCustomer_UpdatedBy")
-                  .OnTable("tblFaq");
+                  .OnTable("tblFAQ");
 
             Delete.ForeignKey("FK_tblFile_tblFileType_FileType")
                   .OnTable("tblFile");
