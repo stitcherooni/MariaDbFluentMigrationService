@@ -603,7 +603,7 @@ namespace MigrationScripts
 
             Create.ForeignKey("FK_tblPaypal_tblPaypal_PaypalParentTransaction")
                   .FromTable("tblPaypal").ForeignColumn("PaypalParentTransactionId")
-                  .ToTable("tblPaypal").PrimaryColumn("PaypalId");
+                  .ToTable("tblPaypal").PrimaryColumn("PaypalTransactionId");
 
             Create.ForeignKey("FK_tblPlatformPartner_tblCustomer_CreatedBy")
                   .FromTable("tblPlatformPartner").ForeignColumn("PlatformPartnerCreatedBy")
