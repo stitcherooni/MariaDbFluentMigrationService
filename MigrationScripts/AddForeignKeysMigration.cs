@@ -775,9 +775,9 @@ namespace MigrationScripts
                   .FromTable("tblRefund").ForeignColumn("RefundUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblRole_tblCustomer_CreatedBy")
-                  .FromTable("tblRole").ForeignColumn("RoleCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblRole_tblCustomer_CreatedBy")
+            //      .FromTable("tblRole").ForeignColumn("RoleCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblRole_tblCustomer_UpdatedBy")
                   .FromTable("tblRole").ForeignColumn("RoleUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1433,8 +1433,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblRefund_tblCustomer_UpdatedBy")
                   .OnTable("tblRefund");
 
-            Delete.ForeignKey("FK_tblRole_tblCustomer_CreatedBy")
-                  .OnTable("tblRole");
+            //Delete.ForeignKey("FK_tblRole_tblCustomer_CreatedBy")
+            //      .OnTable("tblRole");
             Delete.ForeignKey("FK_tblRole_tblCustomer_UpdatedBy")
                   .OnTable("tblRole");
 
