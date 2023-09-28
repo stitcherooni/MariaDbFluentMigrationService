@@ -470,9 +470,9 @@ namespace MigrationScripts
                   .FromTable("tblFileRole").ForeignColumn("FileRoleUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblFileType_tblCustomer_CreatedBy")
-                  .FromTable("tblFileType").ForeignColumn("FileTypeCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblFileType_tblCustomer_CreatedBy")
+            //      .FromTable("tblFileType").ForeignColumn("FileTypeCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblFileType_tblCustomer_UpdatedBy")
                   .FromTable("tblFileType").ForeignColumn("FileTypeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1217,8 +1217,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblFileRole_tblCustomer_UpdatedBy")
                   .OnTable("tblFileRole");
 
-            Delete.ForeignKey("FK_tblFileType_tblCustomer_CreatedBy")
-                  .OnTable("tblFileType");
+            //Delete.ForeignKey("FK_tblFileType_tblCustomer_CreatedBy")
+            //      .OnTable("tblFileType");
             Delete.ForeignKey("FK_tblFileType_tblCustomer_UpdatedBy")
                   .OnTable("tblFileType");
 
