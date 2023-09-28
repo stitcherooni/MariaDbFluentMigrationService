@@ -139,15 +139,15 @@ namespace MigrationScripts
                   .FromTable("tblBusinessDirectory").ForeignColumn("BusinessDirectoryUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblSchool_School")
-            //      .FromTable("tblBusinessDirectoryCategory").ForeignColumn("SchoolId")
-            //      .ToTable("tblSchool").PrimaryColumn("SchoolId");
+            Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblSchool_School")
+                  .FromTable("tblBusinessDirectoryCategory").ForeignColumn("SchoolId")
+                  .ToTable("tblSchool").PrimaryColumn("SchoolId");
             //Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_CreatedBy")
             //      .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryCreatedBy")
             //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
-            //Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
-            //      .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryUpdatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
+                  .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryUpdatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
             Create.ForeignKey("FK_tblBDirectoryClick_tblBusinessDirectory_BusinessDirectory")
                   .FromTable("tblBusinessDirectoryClick").ForeignColumn("BusinessDirectoryId")
