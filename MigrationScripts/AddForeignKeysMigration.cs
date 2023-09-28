@@ -710,9 +710,9 @@ namespace MigrationScripts
                   .FromTable("tblProductPaymentScheme").ForeignColumn("ProductPaymentSchemeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_CreatedBy")
-                  .FromTable("tblProductPaymentSchemeFrequency").ForeignColumn("ProductPaymentSchemeFrequencyCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_CreatedBy")
+            //      .FromTable("tblProductPaymentSchemeFrequency").ForeignColumn("ProductPaymentSchemeFrequencyCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_UpdatedBy")
                   .FromTable("tblProductPaymentSchemeFrequency").ForeignColumn("ProductPaymentSchemeFrequencyUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1387,8 +1387,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblProductPaymentScheme_tblCustomer_UpdatedBy")
                   .OnTable("tblProductPaymentScheme");
 
-            Delete.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_CreatedBy")
-                  .OnTable("tblProductPaymentSchemeFrequency");
+            //Delete.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_CreatedBy")
+            //      .OnTable("tblProductPaymentSchemeFrequency");
             Delete.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_UpdatedBy")
                   .OnTable("tblProductPaymentSchemeFrequency");
 
