@@ -12,10 +12,10 @@ namespace MigrationScripts
                   .ToTable("tblCountry").PrimaryColumn("CountryId");
             Create.ForeignKey("FK_tblAcademicYear_tblCustomer_CreatedBy")
                   .FromTable("tblAcademicYear").ForeignColumn("AcademicYearCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerID");
             Create.ForeignKey("FK_tblAcademicYear_tblCustomer_UpdatedBy")
                   .FromTable("tblAcademicYear").ForeignColumn("AcademicYearUpdatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerID");
 
             Create.ForeignKey("FK_tblApiAuditHistory_tblSchool_Application")
                   .FromTable("tblApiAuditHistory").ForeignColumn("ApplicationId")
