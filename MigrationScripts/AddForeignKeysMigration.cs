@@ -427,9 +427,9 @@ namespace MigrationScripts
                   .FromTable("tblEventTaskGroup").ForeignColumn("EventTaskGroupUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblEventType_tblCustomer_CreatedBy")
-                  .FromTable("tblEventType").ForeignColumn("EventTypeCreatedBy")
-                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            //Create.ForeignKey("FK_tblEventType_tblCustomer_CreatedBy")
+            //      .FromTable("tblEventType").ForeignColumn("EventTypeCreatedBy")
+            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblEventType_tblCustomer_UpdatedBy")
                   .FromTable("tblEventType").ForeignColumn("EventTypeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1187,8 +1187,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblEventTaskGroup_tblCustomer_UpdatedBy")
                   .OnTable("tblEventTaskGroup");
 
-            Delete.ForeignKey("FK_tblEventType_tblCustomer_CreatedBy")
-                  .OnTable("tblEventType");
+            //Delete.ForeignKey("FK_tblEventType_tblCustomer_CreatedBy")
+            //      .OnTable("tblEventType");
             Delete.ForeignKey("FK_tblEventType_tblCustomer_UpdatedBy")
                   .OnTable("tblEventType");
 
