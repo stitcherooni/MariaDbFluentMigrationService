@@ -3,7 +3,7 @@
 namespace MigrationScripts
 {
     [Migration(3)]
-    public class UpdateMigration : Migration
+    public class AddConstrainMigration : Migration
     {
         public override void Up()
         {
