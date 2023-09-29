@@ -145,9 +145,9 @@ namespace MigrationScripts
             //Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_CreatedBy")
             //      .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryCreatedBy")
             //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
-            //Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
-            //      .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryUpdatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
+                  .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryUpdatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
             Create.ForeignKey("FK_tblBDirectoryClick_tblBusinessDirectory_BusinessDirectory")
                   .FromTable("tblBusinessDirectoryClick").ForeignColumn("BusinessDirectoryId")
