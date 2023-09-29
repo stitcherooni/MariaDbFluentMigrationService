@@ -26,6 +26,14 @@ namespace MigrationScripts
                     SchoolPTAName = "SchoolPTAName",
                     SchoolCreatedBy = 1
                 });
+
+            Insert.IntoTable("tblSchool")
+                .Row(new
+                {
+                    SchoolId = 170,
+                    SchoolPTAName = "SchoolPTAName",
+                    SchoolCreatedBy = 1
+                });
         }
 
         public override void Down()
@@ -40,6 +48,12 @@ namespace MigrationScripts
                 .Row(new
                 {
                     SchoolId = 1
+                });
+
+            Delete.FromTable("tblSchool")
+                .Row(new
+                {
+                    SchoolId = 170
                 });
         }
     }
