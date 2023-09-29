@@ -497,9 +497,9 @@ namespace MigrationScripts
                   .FromTable("tblMessage").ForeignColumn("MessageUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
-            //      .FromTable("tblMessageGroup").ForeignColumn("EventId")
-            //      .ToTable("tbEvent").PrimaryColumn("EventId");
+            Create.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
+                  .FromTable("tblMessageGroup").ForeignColumn("EventId")
+                  .ToTable("tbEvent").PrimaryColumn("EventId");
             Create.ForeignKey("FK_tblMessageGroup_tblClass_Class")
                   .FromTable("tblMessageGroup").ForeignColumn("ClassId")
                   .ToTable("tblClass").PrimaryColumn("ClassId");
