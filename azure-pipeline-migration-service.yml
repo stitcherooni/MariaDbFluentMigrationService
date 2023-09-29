@@ -37,7 +37,7 @@ stages:
             podman build -f $(Build.SourcesDirectory)/Dockerfile -t $(jobName):$(tag) .
             podman login -u $(internalSP) -p $(internalSPSecret) $(acrName)
             podman push $(jobName):$(tag) $(acrName)/$(jobName):$(tag)
-            podman rm -fv $(appName)
+            podman rm -fv $(jobName)
 
 #Deploy to dev
   - stage: Deploy_to_dev
