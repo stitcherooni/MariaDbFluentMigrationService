@@ -1014,20 +1014,20 @@ CREATE TABLE `tblBusinessDirectoryCategory` (
 --
 
 INSERT INTO `tblBusinessDirectoryCategory` (`BusinessDirectoryCategoryID`, `BusinessDirectoryCategoryName`, `BusinessDirectoryCategoryIcon`, `SchoolID`, `BusinessDirectoryCategoryDeleted`, `BusinessDirectoryCategoryCreatedBy`, `BusinessDirectoryCategoryCreatedByDate`, `BusinessDirectoryCategoryUpdatedBy`, `BusinessDirectoryCategoryUpdatedDate`) VALUES
-(1, 'Shops & Marketplace', 'fa-shopping-cart', 170, 0, 0, '2015-06-05 11:30:50', 1, NULL),
-(2, 'Home & Garden', 'fa-home', 170, 0, 0, '2015-06-05 11:30:50', 1, NULL),
-(3, 'Entertainment', 'fa-gamepad', 170, 0, 0, '2015-06-05 11:31:16', 1, NULL),
+(1, 'Shops & Marketplace', 'fa-shopping-cart', 1, 0, 0, '2015-06-05 11:30:50', 1, NULL),
+(2, 'Home & Garden', 'fa-home', 1, 0, 0, '2015-06-05 11:30:50', 1, NULL),
+(3, 'Entertainment', 'fa-gamepad', 1, 0, 0, '2015-06-05 11:31:16', 1, NULL),
 (4, 'IT & Web & Marketing', 'fa-laptop', 170, 0, 0, '2015-06-05 11:31:37', 1, NULL),
-(5, 'Estate Agents', 'fa-home', 170, 1, 0, '2015-06-05 11:31:37', 1, NULL),
-(6, 'Food & Beverage', 'fa-glass', 170, 0, 0, '2015-06-05 11:31:37', 1, NULL),
-(7, 'Other', 'fa-circle-o', 170, 0, 0, '2015-06-05 11:31:37', 1, NULL),
-(8, 'Holidays & Travel', 'fa-plane', 170, 0, 0, '2015-06-05 13:14:28', 1, NULL),
-(9, 'Health & Well-being', 'fa-heartbeat', 170, 0, 0, '2015-06-05 13:14:28', 1, NULL),
-(10, 'Professional Services', 'fa-star', 170, 0, 0, '2015-06-05 13:14:28', 1, NULL),
-(11, 'Car Repair & Garages', 'fa-car', 170, 0, 0, '2015-06-05 13:14:28', 1, NULL),
-(12, 'Animal & Veterinary', 'fa-paw', 170, 0, 0, '2015-06-05 13:14:28', 1, NULL),
-(13, 'Legal', 'fa-gavel', 170, 0, 0, '2015-06-05 13:14:28', 1, NULL),
-(14, 'Childcare', 'fa-child', 170, 0, 0, '2020-10-26 18:17:28', 1, NULL);
+(5, 'Estate Agents', 'fa-home', 1, 1, 0, '2015-06-05 11:31:37', 1, NULL),
+(6, 'Food & Beverage', 'fa-glass', 1, 0, 0, '2015-06-05 11:31:37', 1, NULL),
+(7, 'Other', 'fa-circle-o', 1, 0, 0, '2015-06-05 11:31:37', 1, NULL),
+(8, 'Holidays & Travel', 'fa-plane', 1, 0, 0, '2015-06-05 13:14:28', 1, NULL),
+(9, 'Health & Well-being', 'fa-heartbeat', 1, 0, 0, '2015-06-05 13:14:28', 1, NULL),
+(10, 'Professional Services', 'fa-star', 1, 0, 0, '2015-06-05 13:14:28', 1, NULL),
+(11, 'Car Repair & Garages', 'fa-car', 1, 0, 0, '2015-06-05 13:14:28', 1, NULL),
+(12, 'Animal & Veterinary', 'fa-paw', 1, 0, 0, '2015-06-05 13:14:28', 1, NULL),
+(13, 'Legal', 'fa-gavel', 1, 0, 0, '2015-06-05 13:14:28', 1, NULL),
+(14, 'Childcare', 'fa-child', 1, 0, 0, '2020-10-26 18:17:28', 1, NULL);
 
 --
 -- Indexes for dumped tables

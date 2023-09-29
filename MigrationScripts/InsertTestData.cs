@@ -16,13 +16,13 @@ namespace MigrationScripts
                     CustomerEmail = "CustomerEmail@email.com",
                     CustomerPassword = "CustomerPassword",
                     CustomerCreatedBy = 1,
-                    ApplicationID = 0
+                    ApplicationID = 1
                 });
 
             Insert.IntoTable("tblSchool")
                 .Row(new
                 {
-                    SchoolId = 0,
+                    SchoolId = 1,
                     SchoolPTAName = "SchoolPTAName",
                     SchoolCreatedBy = 1
                 });
@@ -39,7 +39,7 @@ namespace MigrationScripts
             Delete.FromTable("tblSchool")
                 .Row(new
                 {
-                    SchoolId = 0
+                    SchoolId = 1
                 });
         }
     }
