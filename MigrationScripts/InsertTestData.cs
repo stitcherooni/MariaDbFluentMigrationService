@@ -18,7 +18,6 @@ namespace MigrationScripts
                     CustomerCreatedBy = 1,
                     ApplicationID = 1
                 })
-            //Insert.IntoTable("tblCustomer")
                 .Row(new
                 {
                     CustomerId = 0,
@@ -37,8 +36,6 @@ namespace MigrationScripts
                    SchoolPTAName = "SchoolPTAName",
                    SchoolCreatedBy = 0
                })
-            //;
-            //Insert.IntoTable("tblSchool")
                 .Row(new
                 {
                     SchoolId = 1,
@@ -305,12 +302,12 @@ namespace MigrationScripts
                 .Row(new
                 {
                     CustomerID = 1
-                });
-            Delete.FromTable("tblCustomer")
+                })
                 .Row(new
                 {
                     CustomerID = 0
                 });
+
             Delete.FromTable("tblSchool")
                .Row(new
                {
