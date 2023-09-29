@@ -2,9 +2,11 @@
 using FluentMigrator.Runner.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace MariaDbFluentMigrationService
 {
@@ -79,9 +81,15 @@ namespace MariaDbFluentMigrationService
         {
             // Instantiate the runner
             var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
+            var env = serviceProvider.GetRequiredService<IHostEnvironment>();
 
             // Execute the migrations
-            runner.MigrateUp();
+            runner.MigrateUp(1);
+
+            if (env.IsDevelopment())
+                runner.MigrateUp(2);
+            runner.MigrateUp(3);
+            runner.MigrateUp(4);
         }
     }
 }
