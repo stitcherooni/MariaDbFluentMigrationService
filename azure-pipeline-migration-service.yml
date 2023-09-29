@@ -46,6 +46,7 @@ stages:
         succeeded('Build'), 
         eq(${{ parameters.dev_env }}, true)
       )
+    dependsOn: Build
     jobs:
       - job: ApplyKubernetesJob
         displayName: "Apply Kubernetes Job"
@@ -105,6 +106,7 @@ stages:
         succeeded('Build'), 
         eq(${{ parameters.qa_env }}, true)
       )
+    dependsOn: Build      
     jobs:
       - job: ApplyKubernetesJob
         displayName: "Apply Kubernetes Job"
@@ -115,23 +117,29 @@ stages:
             inputs:
               kubeloginVersion: "latest"
 
-          - task: Bash@3
-            displayName: Build and Push Image to Azure Container Registry
+          - task: KubectlInstaller@0
             inputs:
-              targetType: inline
-              script: |
-                kubectl get job $(jobName) -n $(envName) &> /dev/null && kubectl delete job $(jobName) -n $(envName)
+              kubectlVersion: 'latest'
 
-          # - task: Kubernetes@1
-          #   displayName: Delete Job $(jobName)
+          # - task: Bash@3
+          #   displayName: Build and Push Image to Azure Container Registry
           #   inputs:
-          #     connectionType: "Azure Resource Manager"
-          #     azureSubscriptionEndpoint: "internal-adm-sp"
-          #     azureResourceGroup: "internal-ptae-rg-01"
-          #     kubernetesCluster: "internal-ptae-aks-01"
+          #     targetType: inline
+          #     script: |
+          #       kubectl get job $(jobName) -n $(envName) &> /dev/null && kubectl delete job $(jobName) -n $(envName)
+
+          - task: Kubernetes@1
+            displayName: Delete Job $(jobName)
+            inputs:
+              connectionType: "Azure Resource Manager"
+              azureSubscriptionEndpoint: "internal-adm-sp"
+              azureResourceGroup: "internal-ptae-rg-01"
+              kubernetesCluster: "internal-ptae-aks-01"
           #     namespace: $(envName)
           #     command: "delete"
           #     arguments: "job $(jobName)"
+              inline: |
+                kubectl get job $(jobName) -n $(envName) &> /dev/null && kubectl delete job $(jobName) -n $(envName)
 
           - task: replacetokens@5
             inputs:
