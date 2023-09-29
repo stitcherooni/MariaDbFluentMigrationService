@@ -2,7 +2,7 @@
 
 namespace MigrationScripts
 {
-    [Migration(2)]
+    [Migration(3)]
     public class UpdateMigration : Migration
     {
         public override void Up()

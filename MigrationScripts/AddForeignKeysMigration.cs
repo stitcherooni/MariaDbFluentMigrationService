@@ -2,7 +2,7 @@
 
 namespace MigrationScripts
 {
-    [Migration(3)]
+    [Migration(4)]
     public class AddForeignKeysMigration : Migration
     {
         public override void Up()
@@ -50,9 +50,9 @@ namespace MigrationScripts
                   .FromTable("tblAuditHistory").ForeignColumn("AuditHistoryUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblAuditHistoryType_tblCustomer_CreatedBy")
-            //      .FromTable("tblAuditHistoryType").ForeignColumn("AuditHistoryTypeCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblAuditHistoryType_tblCustomer_CreatedBy")
+                  .FromTable("tblAuditHistoryType").ForeignColumn("AuditHistoryTypeCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblAuditHistoryType_tblCustomer_UpdatedBy")
                   .FromTable("tblAuditHistoryType").ForeignColumn("AuditHistoryTypeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -230,9 +230,9 @@ namespace MigrationScripts
                   .FromTable("tblCurrency").ForeignColumn("CurrencyUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblCustomer_tblSchool_Application")
-                  .FromTable("tblCustomer").ForeignColumn("ApplicationId")
-                  .ToTable("tblSchool").PrimaryColumn("SchoolId");
+            //Create.ForeignKey("FK_tblCustomer_tblSchool_Application")
+            //      .FromTable("tblCustomer").ForeignColumn("ApplicationId")
+            //      .ToTable("tblSchool").PrimaryColumn("SchoolId");
             Create.ForeignKey("FK_tblCustomer_tblSchool_CustomerSchool")
                   .FromTable("tblCustomer").ForeignColumn("CustomerSchoolId")
                   .ToTable("tblSchool").PrimaryColumn("SchoolId");
