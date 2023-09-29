@@ -25,11 +25,9 @@ namespace MariaDbFluentMigrationService
             string DB_USER_NAME = config["DB_USER_NAME"];
             string DB_PASSWORD = config["DB_PASSWORD"];
             string DB_NAME = config["DB_NAME"];
-            bool IsDevelopment = config.GetValue<bool>("IsDevelopment", false);
 
             var connectionString = String.Format("data source={0};port={1};Database={2};uid={3};pwd={4};Allow User Variables=true",
                 DB_HOST_NAME, DB_HOST_PORT, DB_NAME, DB_USER_NAME, DB_PASSWORD);
-
 
             if (connectionString == null)
             {
@@ -43,7 +41,7 @@ namespace MariaDbFluentMigrationService
                 {
                     // Put the database update into a scope to ensure
                     // that all resources will be disposed.
-                    UpdateDatabase(scope.ServiceProvider, IsDevelopment);
+                    UpdateDatabase(scope.ServiceProvider);
                     Console.WriteLine("The data base has been successfully updated");
                 }
                 catch (Exception ex)
@@ -76,18 +74,13 @@ namespace MariaDbFluentMigrationService
                 .BuildServiceProvider(false);
         }
 
-        private static void UpdateDatabase(IServiceProvider serviceProvider, bool isDevelopment)
+        private static void UpdateDatabase(IServiceProvider serviceProvider)
         {
             // Instantiate the runner
             var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
 
             // Execute the migrations
-            runner.MigrateUp(1);
-
-            if (isDevelopment)
-                runner.MigrateUp(2);
-            runner.MigrateUp(3);
-            runner.MigrateUp(4);
+            runner.MigrateUp();
         }
     }
 }
