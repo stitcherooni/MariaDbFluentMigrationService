@@ -40,11 +40,12 @@ namespace MariaDbFluentMigrationService
             using (var serviceProvider = CreateServices(connectionString))
             using (var scope = serviceProvider.CreateScope())
             {
+                var env = scope.ServiceProvider.GetRequiredService<IHostEnvironment>();
                 try
                 {
                     // Put the database update into a scope to ensure
                     // that all resources will be disposed.
-                    UpdateDatabase(scope.ServiceProvider);
+                    UpdateDatabase(scope.ServiceProvider, env);
                     Console.WriteLine("The data base has been successfully updated");
                 }
                 catch (Exception ex)
@@ -77,11 +78,10 @@ namespace MariaDbFluentMigrationService
                 .BuildServiceProvider(false);
         }
 
-        private static void UpdateDatabase(IServiceProvider serviceProvider)
+        private static void UpdateDatabase(IServiceProvider serviceProvider, IHostEnvironment env)
         {
             // Instantiate the runner
             var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
-            var env = serviceProvider.GetRequiredService<IHostEnvironment>();
 
             // Execute the migrations
             runner.MigrateUp(1);
