@@ -499,7 +499,7 @@ namespace MigrationScripts
 
             Create.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
                   .FromTable("tblMessageGroup").ForeignColumn("EventId")
-                  .ToTable("tbEvent").PrimaryColumn("EventId");
+                  .ToTable("tblEvent").PrimaryColumn("EventId");
             Create.ForeignKey("FK_tblMessageGroup_tblClass_Class")
                   .FromTable("tblMessageGroup").ForeignColumn("ClassId")
                   .ToTable("tblClass").PrimaryColumn("ClassId");
