@@ -59,6 +59,7 @@ stages:
 
           - task: Kubernetes@1
             displayName: Delete Job $(jobName)
+            continueOnError: true
             inputs:
               connectionType: "Azure Resource Manager"
               azureSubscriptionEndpoint: "internal-adm-sp"
@@ -117,29 +118,17 @@ stages:
             inputs:
               kubeloginVersion: "latest"
 
-          - task: KubectlInstaller@0
-            inputs:
-              kubectlVersion: 'latest'
-
-          # - task: Bash@3
-          #   displayName: Build and Push Image to Azure Container Registry
-          #   inputs:
-          #     targetType: inline
-          #     script: |
-          #       kubectl get job $(jobName) -n $(envName) &> /dev/null && kubectl delete job $(jobName) -n $(envName)
-
           - task: Kubernetes@1
             displayName: Delete Job $(jobName)
+            continueOnError: true
             inputs:
               connectionType: "Azure Resource Manager"
               azureSubscriptionEndpoint: "internal-adm-sp"
               azureResourceGroup: "internal-ptae-rg-01"
               kubernetesCluster: "internal-ptae-aks-01"
-          #     namespace: $(envName)
-          #     command: "delete"
-          #     arguments: "job $(jobName)"
-              inline: |
-                kubectl get job $(jobName) -n $(envName) &> /dev/null && kubectl delete job $(jobName) -n $(envName)
+              namespace: $(envName)
+              command: "delete"
+              arguments: "job $(jobName)"
 
           - task: replacetokens@5
             inputs:
