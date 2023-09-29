@@ -31,6 +31,13 @@ namespace MigrationScripts
                 });
 
             Insert.IntoTable("tblSchool")
+               .Row(new
+               {
+                   SchoolId = 0,
+                   SchoolPTAName = "SchoolPTAName",
+                   SchoolCreatedBy = 0
+               });
+            Insert.IntoTable("tblSchool")
                 .Row(new
                 {
                     SchoolId = 1,
@@ -58,6 +65,11 @@ namespace MigrationScripts
                 .Row(new
                 {
                     CustomerID = 0
+                });
+            Delete.FromTable("tblSchool")
+                .Row(new
+                {
+                    SchoolId = 0
                 });
             Delete.FromTable("tblSchool")
                 .Row(new
