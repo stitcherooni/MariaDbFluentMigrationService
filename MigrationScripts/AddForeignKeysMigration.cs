@@ -139,15 +139,15 @@ namespace MigrationScripts
                   .FromTable("tblBusinessDirectory").ForeignColumn("BusinessDirectoryUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblSchool_School")
-            //      .FromTable("tblBusinessDirectoryCategory").ForeignColumn("SchoolId")
-            //      .ToTable("tblSchool").PrimaryColumn("SchoolId");
-            //Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_CreatedBy")
-            //      .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
-            //Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
-            //      .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryUpdatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblSchool_School")
+                  .FromTable("tblBusinessDirectoryCategory").ForeignColumn("SchoolId")
+                  .ToTable("tblSchool").PrimaryColumn("SchoolId");
+            Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_CreatedBy")
+                  .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
+                  .FromTable("tblBusinessDirectoryCategory").ForeignColumn("BusinessDirectoryCategoryUpdatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
             Create.ForeignKey("FK_tblBDirectoryClick_tblBusinessDirectory_BusinessDirectory")
                   .FromTable("tblBusinessDirectoryClick").ForeignColumn("BusinessDirectoryId")
@@ -195,44 +195,44 @@ namespace MigrationScripts
             Create.ForeignKey("FK_tblComponent_tblComponentGroup_UpdatedBy")
                   .FromTable("tblComponent").ForeignColumn("ComponentGroupId")
                   .ToTable("tblComponentGroup").PrimaryColumn("ComponentGroupId");
-            //Create.ForeignKey("FK_tblComponent_tblCustomer_CreatedBy")
-            //      .FromTable("tblComponent").ForeignColumn("ComponentCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblComponent_tblCustomer_CreatedBy")
+                  .FromTable("tblComponent").ForeignColumn("ComponentCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblComponent_tblCustomer_UpdatedBy")
                   .FromTable("tblComponent").ForeignColumn("ComponentUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblComponentGroup_tblCustomer_CreatedBy")
-            //      .FromTable("tblComponentGroup").ForeignColumn("ComponentGroupCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblComponentGroup_tblCustomer_CreatedBy")
+                  .FromTable("tblComponentGroup").ForeignColumn("ComponentGroupCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblComponentGroup_tblCustomer_UpdatedBy")
                   .FromTable("tblComponentGroup").ForeignColumn("ComponentGroupUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblComponentType_tblCustomer_CreatedBy")
-            //      .FromTable("tblComponentType").ForeignColumn("ComponentTypeCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblComponentType_tblCustomer_CreatedBy")
+                  .FromTable("tblComponentType").ForeignColumn("ComponentTypeCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblComponentType_tblCustomer_UpdatedBy")
                   .FromTable("tblComponentType").ForeignColumn("ComponentTypeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblCountry_tblCustomer_CreatedBy")
-            //      .FromTable("tblCountry").ForeignColumn("CountryCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblCountry_tblCustomer_CreatedBy")
+                  .FromTable("tblCountry").ForeignColumn("CountryCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblCountry_tblCustomer_UpdatedBy")
                   .FromTable("tblCountry").ForeignColumn("CountryUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblCurrency_tblCustomer_CreatedBy")
-            //      .FromTable("tblCurrency").ForeignColumn("CurrencyCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblCurrency_tblCustomer_CreatedBy")
+                  .FromTable("tblCurrency").ForeignColumn("CurrencyCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblCurrency_tblCustomer_UpdatedBy")
                   .FromTable("tblCurrency").ForeignColumn("CurrencyUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblCustomer_tblSchool_Application")
-            //      .FromTable("tblCustomer").ForeignColumn("ApplicationId")
-            //      .ToTable("tblSchool").PrimaryColumn("SchoolId");
+            Create.ForeignKey("FK_tblCustomer_tblSchool_Application")
+                  .FromTable("tblCustomer").ForeignColumn("ApplicationId")
+                  .ToTable("tblSchool").PrimaryColumn("SchoolId");
             Create.ForeignKey("FK_tblCustomer_tblSchool_CustomerSchool")
                   .FromTable("tblCustomer").ForeignColumn("CustomerSchoolId")
                   .ToTable("tblSchool").PrimaryColumn("SchoolId");
@@ -427,9 +427,9 @@ namespace MigrationScripts
                   .FromTable("tblEventTaskGroup").ForeignColumn("EventTaskGroupUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblEventType_tblCustomer_CreatedBy")
-            //      .FromTable("tblEventType").ForeignColumn("EventTypeCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblEventType_tblCustomer_CreatedBy")
+                  .FromTable("tblEventType").ForeignColumn("EventTypeCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblEventType_tblCustomer_UpdatedBy")
                   .FromTable("tblEventType").ForeignColumn("EventTypeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -470,16 +470,16 @@ namespace MigrationScripts
                   .FromTable("tblFileRole").ForeignColumn("FileRoleUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblFileType_tblCustomer_CreatedBy")
-            //      .FromTable("tblFileType").ForeignColumn("FileTypeCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblFileType_tblCustomer_CreatedBy")
+                  .FromTable("tblFileType").ForeignColumn("FileTypeCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblFileType_tblCustomer_UpdatedBy")
                   .FromTable("tblFileType").ForeignColumn("FileTypeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblLanguage_tblCustomer_CreatedBy")
-            //      .FromTable("tblLanguage").ForeignColumn("LanguageCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblLanguage_tblCustomer_CreatedBy")
+                  .FromTable("tblLanguage").ForeignColumn("LanguageCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblLanguage_tblCustomer_UpdatedBy")
                   .FromTable("tblLanguage").ForeignColumn("LanguageUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -497,9 +497,9 @@ namespace MigrationScripts
                   .FromTable("tblMessage").ForeignColumn("MessageUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
-            //      .FromTable("tblMessageGroup").ForeignColumn("EventId")
-            //      .ToTable("tbEvent").PrimaryColumn("EventId");
+            Create.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
+                  .FromTable("tblMessageGroup").ForeignColumn("EventId")
+                  .ToTable("tbEvent").PrimaryColumn("EventId");
             Create.ForeignKey("FK_tblMessageGroup_tblClass_Class")
                   .FromTable("tblMessageGroup").ForeignColumn("ClassId")
                   .ToTable("tblClass").PrimaryColumn("ClassId");
@@ -507,16 +507,16 @@ namespace MigrationScripts
                   .FromTable("tblMessageGroup").ForeignColumn("MessageGroupCreatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblMessageStatus_tblCustomer_CreatedBy")
-            //      .FromTable("tblMessageStatus").ForeignColumn("MessageStatusCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblMessageStatus_tblCustomer_CreatedBy")
+                  .FromTable("tblMessageStatus").ForeignColumn("MessageStatusCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblMessageStatus_tblCustomer_UpdatedBy")
                   .FromTable("tblMessageStatus").ForeignColumn("MessageStatusUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblMessageType_tblCustomer_CreatedBy")
-            //      .FromTable("tblMessageType").ForeignColumn("MessageTypeCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblMessageType_tblCustomer_CreatedBy")
+                  .FromTable("tblMessageType").ForeignColumn("MessageTypeCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblMessageType_tblCustomer_UpdatedBy")
                   .FromTable("tblMessageType").ForeignColumn("MessageTypeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -560,9 +560,9 @@ namespace MigrationScripts
                   .FromTable("tblOrderItem").ForeignColumn("OrderItemUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblOrganisationType_tblCustomer_CreatedBy")
-            //      .FromTable("tblOrganisationType").ForeignColumn("OrganisationTypeCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblOrganisationType_tblCustomer_CreatedBy")
+                  .FromTable("tblOrganisationType").ForeignColumn("OrganisationTypeCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblOrganisationType_tblCustomer_UpdatedBy")
                   .FromTable("tblOrganisationType").ForeignColumn("OrganisationTypeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -587,16 +587,16 @@ namespace MigrationScripts
                   .FromTable("tblPartner").ForeignColumn("PartnerUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblPaymentMethod_tblCustomer_CreatedBy")
-            //      .FromTable("tblPaymentMethod").ForeignColumn("PaymentMethodCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblPaymentMethod_tblCustomer_CreatedBy")
+                  .FromTable("tblPaymentMethod").ForeignColumn("PaymentMethodCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblPaymentMethod_tblCustomer_UpdatedBy")
                   .FromTable("tblPaymentMethod").ForeignColumn("PaymentMethodUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblPaymentStatus_tblCustomer_CreatedBy")
-            //      .FromTable("tblPaymentStatus").ForeignColumn("PaymentStatusCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblPaymentStatus_tblCustomer_CreatedBy")
+                  .FromTable("tblPaymentStatus").ForeignColumn("PaymentStatusCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblPaymentStatus_tblCustomer_UpdatedBy")
                   .FromTable("tblPaymentStatus").ForeignColumn("PaymentStatusUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -605,9 +605,9 @@ namespace MigrationScripts
                   .FromTable("tblPaypal").ForeignColumn("PaypalParentTransactionId")
                   .ToTable("tblPaypal").PrimaryColumn("PaypalTransactionId");
 
-            //Create.ForeignKey("FK_tblPlatformPartner_tblCustomer_CreatedBy")
-            //      .FromTable("tblPlatformPartner").ForeignColumn("PlatformPartnerCreatedBy")
-                  //.ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblPlatformPartner_tblCustomer_CreatedBy")
+                  .FromTable("tblPlatformPartner").ForeignColumn("PlatformPartnerCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblPlatformPartner_tblCustomer_UpdatedBy")
                   .FromTable("tblPlatformPartner").ForeignColumn("PlatformPartnerUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -710,9 +710,9 @@ namespace MigrationScripts
                   .FromTable("tblProductPaymentScheme").ForeignColumn("ProductPaymentSchemeUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_CreatedBy")
-            //      .FromTable("tblProductPaymentSchemeFrequency").ForeignColumn("ProductPaymentSchemeFrequencyCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_CreatedBy")
+                  .FromTable("tblProductPaymentSchemeFrequency").ForeignColumn("ProductPaymentSchemeFrequencyCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_UpdatedBy")
                   .FromTable("tblProductPaymentSchemeFrequency").ForeignColumn("ProductPaymentSchemeFrequencypdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -738,12 +738,12 @@ namespace MigrationScripts
                   .FromTable("tblProductQuestionAnswer").ForeignColumn("ProductQuestionId")
                   .ToTable("tblProductQuestion").PrimaryColumn("ProductQuestionId");
 
-            //Create.ForeignKey("FK_tblProductType_tblCustomer_CreatedBy")
-            //      .FromTable("tblProductType").ForeignColumn("ProductTypeCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
-            //Create.ForeignKey("FK_tblProductType_tblCustomer_UpdatedBy")
-            //      .FromTable("tblProductType").ForeignColumn("ProductTypeUpdatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblProductType_tblCustomer_CreatedBy")
+                  .FromTable("tblProductType").ForeignColumn("ProductTypeCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblProductType_tblCustomer_UpdatedBy")
+                  .FromTable("tblProductType").ForeignColumn("ProductTypeUpdatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
             Create.ForeignKey("FK_tblPtamember_tblCustomer_CreatedBy")
                   .FromTable("tblPTAMember").ForeignColumn("PtamemberCreatedBy")
@@ -764,9 +764,9 @@ namespace MigrationScripts
                   .FromTable("tblPTAMember").ForeignColumn("CustomerId")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-             Create.ForeignKey("FK_tblRefund_tblOrder_Order")
-                  .FromTable("tblRefund").ForeignColumn("OrderId")
-                  .ToTable("tblOrder").PrimaryColumn("OrderId");
+            Create.ForeignKey("FK_tblRefund_tblOrder_Order")
+                 .FromTable("tblRefund").ForeignColumn("OrderId")
+                 .ToTable("tblOrder").PrimaryColumn("OrderId");
 
             Create.ForeignKey("FK_tblRefund_tblCustomer_CreatedBy")
                   .FromTable("tblRefund").ForeignColumn("RefundCreatedBy")
@@ -775,9 +775,9 @@ namespace MigrationScripts
                   .FromTable("tblRefund").ForeignColumn("RefundUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblRole_tblCustomer_CreatedBy")
-            //      .FromTable("tblRole").ForeignColumn("RoleCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblRole_tblCustomer_CreatedBy")
+                  .FromTable("tblRole").ForeignColumn("RoleCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblRole_tblCustomer_UpdatedBy")
                   .FromTable("tblRole").ForeignColumn("RoleUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -812,9 +812,9 @@ namespace MigrationScripts
                   .FromTable("tblSchool").ForeignColumn("PlanTypeId")
                   .ToTable("tblPlanType").PrimaryColumn("PlanTypeId");
 
-            //Create.ForeignKey("FK_tblSchoolYear_tblCustomer_CreatedBy")
-            //      .FromTable("tblSchoolYear").ForeignColumn("SchoolYearCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblSchoolYear_tblCustomer_CreatedBy")
+                  .FromTable("tblSchoolYear").ForeignColumn("SchoolYearCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
             Create.ForeignKey("FK_tblSchoolYear_tblCustomer_UpdatedBy")
                   .FromTable("tblSchoolYear").ForeignColumn("SchoolYearUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -877,28 +877,28 @@ namespace MigrationScripts
                   .FromTable("tblTicket").ForeignColumn("TicketUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            //Create.ForeignKey("FK_tblTranslation_tblSchool_Application")
-            //     .FromTable("tblTranslation").ForeignColumn("ApplicationId")
-            //     .ToTable("tblSchool").PrimaryColumn("SchoolId");
+            Create.ForeignKey("FK_tblTranslation_tblSchool_Application")
+                 .FromTable("tblTranslation").ForeignColumn("ApplicationId")
+                 .ToTable("tblSchool").PrimaryColumn("SchoolId");
             Create.ForeignKey("FK_tblTranslation_tblComponent_Component")
                   .FromTable("tblTranslation").ForeignColumn("ComponentId")
                   .ToTable("tblComponent").PrimaryColumn("ComponentId");
             Create.ForeignKey("FK_tblTranslation_tblLanguage_Language")
                  .FromTable("tblTranslation").ForeignColumn("LanguageId")
                  .ToTable("tblLanguage").PrimaryColumn("LanguageId");
-            //Create.ForeignKey("FK_tblTranslation_tblCustomer_CreatedBy")
-            //      .FromTable("tblTranslation").ForeignColumn("TranslationCreatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
-            //Create.ForeignKey("FK_tblTranslation_tblCustomer_UpdatedBy")
-            //      .FromTable("tblTranslation").ForeignColumn("TranslationUpdatedBy")
-            //      .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblTranslation_tblCustomer_CreatedBy")
+                  .FromTable("tblTranslation").ForeignColumn("TranslationCreatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
+            Create.ForeignKey("FK_tblTranslation_tblCustomer_UpdatedBy")
+                  .FromTable("tblTranslation").ForeignColumn("TranslationUpdatedBy")
+                  .ToTable("tblCustomer").PrimaryColumn("CustomerId");
         }
         public override void Down()
         {
             Delete.ForeignKey("FK_tblAcademicYear_tblCountry_Country")
                   .OnTable("tblAcademicYear");
-            //Delete.ForeignKey("FK_tblAcademicYear_tblCustomer_CreatedBy")
-            //      .OnTable("tblAcademicYear");
+            Delete.ForeignKey("FK_tblAcademicYear_tblCustomer_CreatedBy")
+                  .OnTable("tblAcademicYear");
             Delete.ForeignKey("FK_tblAcademicYear_tblCustomer_UpdatedBy")
                   .OnTable("tblAcademicYear");
 
@@ -925,8 +925,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblAuditHistory_tblCustomer_UpdatedBy")
                   .OnTable("tblAuditHistory");
 
-            //Delete.ForeignKey("FK_tblAuditHistoryType_tblCustomer_CreatedBy")
-            //      .OnTable("tblAuditHistoryType");
+            Delete.ForeignKey("FK_tblAuditHistoryType_tblCustomer_CreatedBy")
+                  .OnTable("tblAuditHistoryType");
             Delete.ForeignKey("FK_tblAuditHistoryType_tblCustomer_UpdatedBy")
                   .OnTable("tblAuditHistoryType");
 
@@ -987,12 +987,12 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblBusinessDirectory_tblCustomer_UpdatedBy")
                   .OnTable("tblBusinessDirectory");
 
-            //Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblSchool_School")
-            //      .OnTable("tblBusinessDirectoryCategory");
-            //Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_CreatedBy")
-            //      .OnTable("tblBusinessDirectoryCategory");
-            //Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
-            //      .OnTable("tblBusinessDirectoryCategory");
+            Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblSchool_School")
+                  .OnTable("tblBusinessDirectoryCategory");
+            Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_CreatedBy")
+                  .OnTable("tblBusinessDirectoryCategory");
+            Delete.ForeignKey("FK_tblBusinessDirectoryCategory_tblCustomer_UpdatedBy")
+                  .OnTable("tblBusinessDirectoryCategory");
 
             Delete.ForeignKey("FK_tblBDirectoryClick_tblBusinessDirectory_BusinessDirectory")
                   .OnTable("tblBusinessDirectoryClick");
@@ -1026,28 +1026,28 @@ namespace MigrationScripts
                   .OnTable("tblComponent");
             Delete.ForeignKey("FK_tblComponent_tblComponentGroup_UpdatedBy")
                   .OnTable("tblComponent");
-            //Delete.ForeignKey("FK_tblComponent_tblCustomer_CreatedBy")
-            //      .OnTable("tblComponent");
+            Delete.ForeignKey("FK_tblComponent_tblCustomer_CreatedBy")
+                  .OnTable("tblComponent");
             Delete.ForeignKey("FK_tblComponent_tblCustomer_UpdatedBy")
                   .OnTable("tblComponent");
 
-            //Delete.ForeignKey("FK_tblComponentGroup_tblCustomer_CreatedBy")
-            //      .OnTable("tblComponentGroup");
+            Delete.ForeignKey("FK_tblComponentGroup_tblCustomer_CreatedBy")
+                  .OnTable("tblComponentGroup");
             Delete.ForeignKey("FK_tblComponentGroup_tblCustomer_UpdatedBy")
                   .OnTable("tblComponentGroup");
 
-            //Delete.ForeignKey("FK_tblComponentType_tblCustomer_CreatedBy")
-            //      .OnTable("tblComponentType");
+            Delete.ForeignKey("FK_tblComponentType_tblCustomer_CreatedBy")
+                  .OnTable("tblComponentType");
             Delete.ForeignKey("FK_tblComponentType_tblCustomer_UpdatedBy")
                   .OnTable("tblComponentType");
 
-            //Delete.ForeignKey("FK_tblCountry_tblCustomer_CreatedBy")
-            //      .OnTable("tblCountry");
+            Delete.ForeignKey("FK_tblCountry_tblCustomer_CreatedBy")
+                  .OnTable("tblCountry");
             Delete.ForeignKey("FK_tblCountry_tblCustomer_UpdatedBy")
                   .OnTable("tblCountry");
 
-            //Delete.ForeignKey("FK_tblCurrency_tblCustomer_CreatedBy")
-            //      .OnTable("tblCurrency");
+            Delete.ForeignKey("FK_tblCurrency_tblCustomer_CreatedBy")
+                  .OnTable("tblCurrency");
             Delete.ForeignKey("FK_tblCurrency_tblCustomer_UpdatedBy")
                   .OnTable("tblCurrency");
 
@@ -1187,8 +1187,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblEventTaskGroup_tblCustomer_UpdatedBy")
                   .OnTable("tblEventTaskGroup");
 
-            //Delete.ForeignKey("FK_tblEventType_tblCustomer_CreatedBy")
-            //      .OnTable("tblEventType");
+            Delete.ForeignKey("FK_tblEventType_tblCustomer_CreatedBy")
+                  .OnTable("tblEventType");
             Delete.ForeignKey("FK_tblEventType_tblCustomer_UpdatedBy")
                   .OnTable("tblEventType");
 
@@ -1217,13 +1217,13 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblFileRole_tblCustomer_UpdatedBy")
                   .OnTable("tblFileRole");
 
-            //Delete.ForeignKey("FK_tblFileType_tblCustomer_CreatedBy")
-            //      .OnTable("tblFileType");
+            Delete.ForeignKey("FK_tblFileType_tblCustomer_CreatedBy")
+                  .OnTable("tblFileType");
             Delete.ForeignKey("FK_tblFileType_tblCustomer_UpdatedBy")
                   .OnTable("tblFileType");
 
-            //Delete.ForeignKey("FK_tblLanguage_tblCustomer_CreatedBy")
-            //      .OnTable("tblLanguage");
+            Delete.ForeignKey("FK_tblLanguage_tblCustomer_CreatedBy")
+                  .OnTable("tblLanguage");
             Delete.ForeignKey("FK_tblLanguage_tblCustomer_UpdatedBy")
                   .OnTable("tblLanguage");
 
@@ -1236,15 +1236,15 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblMessage_tblCustomer_UpdatedBy")
                   .OnTable("tblMessage");
 
-            //Delete.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
-            //      .OnTable("tblMessageGroup");
+            Delete.ForeignKey("FK_tblMessageGroup_tblEvent_Event")
+                  .OnTable("tblMessageGroup");
             Delete.ForeignKey("FK_tblMessageGroup_tblClass_Class")
                   .OnTable("tblMessageGroup");
             Delete.ForeignKey("FK_tblMessageGroup_tblCustomer_CreatedBy")
                   .OnTable("tblMessageGroup");
 
-            //Delete.ForeignKey("FK_tblMessageStatus_tblCustomer_CreatedBy")
-            //      .OnTable("tblMessageStatus");
+            Delete.ForeignKey("FK_tblMessageStatus_tblCustomer_CreatedBy")
+                  .OnTable("tblMessageStatus");
             Delete.ForeignKey("FK_tblMessageStatus_tblCustomer_UpdatedBy")
                   .OnTable("tblMessageStatus");
 
@@ -1282,8 +1282,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblOrderItem_tblCustomer_UpdatedBy")
                   .OnTable("tblOrderItem");
 
-            //Delete.ForeignKey("FK_tblOrganisationType_tblCustomer_CreatedBy")
-            //      .OnTable("tblOrganisationType");
+            Delete.ForeignKey("FK_tblOrganisationType_tblCustomer_CreatedBy")
+                  .OnTable("tblOrganisationType");
             Delete.ForeignKey("FK_tblOrganisationType_tblCustomer_UpdatedBy")
                   .OnTable("tblOrganisationType");
 
@@ -1301,21 +1301,21 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblPartner_tblCustomer_UpdatedBy")
                   .OnTable("tblPartner");
 
-            //Delete.ForeignKey("FK_tblPaymentMethod_tblCustomer_CreatedBy")
-            //      .OnTable("tblPaymentMethod");
+            Delete.ForeignKey("FK_tblPaymentMethod_tblCustomer_CreatedBy")
+                  .OnTable("tblPaymentMethod");
             Delete.ForeignKey("FK_tblPaymentMethod_tblCustomer_UpdatedBy")
                   .OnTable("tblPaymentMethod");
 
-            //Delete.ForeignKey("FK_tblPaymentStatus_tblCustomer_CreatedBy")
-            //      .OnTable("tblPaymentStatus");
+            Delete.ForeignKey("FK_tblPaymentStatus_tblCustomer_CreatedBy")
+                  .OnTable("tblPaymentStatus");
             Delete.ForeignKey("FK_tblPaymentStatus_tblCustomer_UpdatedBy")
                   .OnTable("tblPaymentStatus");
 
             Delete.ForeignKey("FK_tblPaypal_tblPaypal_PaypalParentTransaction")
                   .OnTable("tblPaypal");
 
-            //Delete.ForeignKey("FK_tblPlatformPartner_tblCustomer_CreatedBy")
-            //      .OnTable("tblPlatformPartner");
+            Delete.ForeignKey("FK_tblPlatformPartner_tblCustomer_CreatedBy")
+                  .OnTable("tblPlatformPartner");
             Delete.ForeignKey("FK_tblPlatformPartner_tblCustomer_UpdatedBy")
                   .OnTable("tblPlatformPartner");
 
@@ -1387,8 +1387,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblProductPaymentScheme_tblCustomer_UpdatedBy")
                   .OnTable("tblProductPaymentScheme");
 
-            //Delete.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_CreatedBy")
-            //      .OnTable("tblProductPaymentSchemeFrequency");
+            Delete.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_CreatedBy")
+                  .OnTable("tblProductPaymentSchemeFrequency");
             Delete.ForeignKey("FK_tblProductPaymentSchemeFrequency_tblCustomer_UpdatedBy")
                   .OnTable("tblProductPaymentSchemeFrequency");
 
@@ -1407,10 +1407,10 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblProductQuestionAnswer_tblProductQuestion_ProductQuestion")
                   .OnTable("tblProductQuestionAnswer");
 
-            //Delete.ForeignKey("FK_tblProductType_tblCustomer_CreatedBy")
-            //      .OnTable("tblProductType");
-            //Delete.ForeignKey("FK_tblProductType_tblCustomer_UpdatedBy")
-            //      .OnTable("tblProductType");
+            Delete.ForeignKey("FK_tblProductType_tblCustomer_CreatedBy")
+                  .OnTable("tblProductType");
+            Delete.ForeignKey("FK_tblProductType_tblCustomer_UpdatedBy")
+                  .OnTable("tblProductType");
 
             Delete.ForeignKey("FK_tblPtamember_tblCustomer_CreatedBy")
                   .OnTable("tblPTAMember");
@@ -1433,8 +1433,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblRefund_tblCustomer_UpdatedBy")
                   .OnTable("tblRefund");
 
-            //Delete.ForeignKey("FK_tblRole_tblCustomer_CreatedBy")
-            //      .OnTable("tblRole");
+            Delete.ForeignKey("FK_tblRole_tblCustomer_CreatedBy")
+                  .OnTable("tblRole");
             Delete.ForeignKey("FK_tblRole_tblCustomer_UpdatedBy")
                   .OnTable("tblRole");
 
@@ -1459,8 +1459,8 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblSchool_tblPlanType_PlanType")
                   .OnTable("tblSchool");
 
-            //Delete.ForeignKey("FK_tblSchoolYear_tblCustomer_CreatedBy")
-            //      .OnTable("tblSchoolYear");
+            Delete.ForeignKey("FK_tblSchoolYear_tblCustomer_CreatedBy")
+                  .OnTable("tblSchoolYear");
             Delete.ForeignKey("FK_tblSchoolYear_tblCustomer_UpdatedBy")
                   .OnTable("tblSchoolYear");
 
@@ -1505,16 +1505,16 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblTicket_tblCustomer_UpdatedBy")
                   .OnTable("tblTicket");
 
-            //Delete.ForeignKey("FK_tblTranslation_tblSchool_Application")
-            //      .OnTable("tblTranslation");
+            Delete.ForeignKey("FK_tblTranslation_tblSchool_Application")
+                  .OnTable("tblTranslation");
             Delete.ForeignKey("FK_tblTranslation_tblComponent_Component")
                   .OnTable("tblTranslation");
             Delete.ForeignKey("FK_tblTranslation_tblLanguage_Language")
                   .OnTable("tblTranslation");
-            //Delete.ForeignKey("FK_tblTranslation_tblCustomer_CreatedBy")
-            //      .OnTable("tblCustomer");
-            //Delete.ForeignKey("FK_tblTranslation_tblCustomer_UpdatedBy")
-            //      .OnTable("tblTranslation");
+            Delete.ForeignKey("FK_tblTranslation_tblCustomer_CreatedBy")
+                  .OnTable("tblCustomer");
+            Delete.ForeignKey("FK_tblTranslation_tblCustomer_UpdatedBy")
+                  .OnTable("tblTranslation");
         }
     }
 }
