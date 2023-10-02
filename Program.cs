@@ -15,17 +15,17 @@ namespace MariaDbFluentMigrationService
         {
             var builder = new ConfigurationBuilder();
             builder.SetBasePath(Directory.GetCurrentDirectory())
-                   .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                   .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                   .AddUserSecrets<Program>()
+                   .AddEnvironmentVariables();
 
             IConfiguration config = builder.Build();
-            
-            //string connectionString = Environment.GetEnvironmentVariable("ConnectionStrings__MariaDbServer");
 
-            string DB_HOST_NAME = Environment.GetEnvironmentVariable("DB_HOST_NAME");
-            string DB_HOST_PORT = Environment.GetEnvironmentVariable("DB_HOST_PORT");
-            string DB_USER_NAME = Environment.GetEnvironmentVariable("DB_USER_NAME");
-            string DB_PASSWORD = Environment.GetEnvironmentVariable("DB_PASSWORD");
-            string DB_NAME = Environment.GetEnvironmentVariable("DB_NAME");
+            string DB_HOST_NAME = config["DB_HOST_NAME"];
+            string DB_HOST_PORT = config["DB_HOST_PORT"];
+            string DB_USER_NAME = config["DB_USER_NAME"];
+            string DB_PASSWORD = config["DB_PASSWORD"];
+            string DB_NAME = config["DB_NAME"];
 
             var connectionString = String.Format("data source={0};port={1};Database={2};uid={3};pwd={4};Allow User Variables=true",
                 DB_HOST_NAME, DB_HOST_PORT, DB_NAME, DB_USER_NAME, DB_PASSWORD);
