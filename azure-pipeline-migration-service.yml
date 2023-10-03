@@ -101,7 +101,7 @@ stages:
 
   #Deploy to qa
   - stage: Deploy_to_qa
-    displayName: Deploy image to AKS
+    displayName: Deploy to qa
     condition: |
       and(
         succeeded('Build'), 
