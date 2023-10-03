@@ -230,9 +230,6 @@ namespace MigrationScripts
                   .FromTable("tblCurrency").ForeignColumn("CurrencyUpdatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
 
-            Create.ForeignKey("FK_tblCustomer_tblSchool_CustomerSchool")
-                  .FromTable("tblCustomer").ForeignColumn("CustomerSchoolId")
-                  .ToTable("tblSchool").PrimaryColumn("SchoolId");
             Create.ForeignKey("FK_tblCustomer_tblCustomer_CreatedById")
                   .FromTable("tblCustomer").ForeignColumn("CustomerCreatedBy")
                   .ToTable("tblCustomer").PrimaryColumn("CustomerId");
@@ -1048,8 +1045,6 @@ namespace MigrationScripts
             Delete.ForeignKey("FK_tblCurrency_tblCustomer_UpdatedBy")
                   .OnTable("tblCurrency");
 
-            Delete.ForeignKey("FK_tblCustomer_tblSchool_CustomerSchool")
-                  .OnTable("tblCustomer");
             Delete.ForeignKey("FK_tblCustomer_tblCustomer_CreatedById")
                   .OnTable("tblCustomer");
             Delete.ForeignKey("FK_tblCustomer_tblCustomer_UpdatedById")
